@@ -85,6 +85,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 16px;
+    width: fit-content;
     max-width: fit-content;
     margin: 0 auto; /* Center horizontally in the iframe */
 }
@@ -96,6 +97,9 @@ body {
 .heatmap-container {
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto;
 }
 
 .controls {

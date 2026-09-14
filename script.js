@@ -245,10 +245,14 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Hide controls if embedded in Framer (iframe)
-    if (window.self !== window.top) {
+    // Hide controls if NOT running on localhost
+    const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+    if (!isLocalhost) {
         const controls = document.getElementById("ui-controls");
         if (controls) controls.style.display = "none";
+        
+        const saveStatus = document.getElementById("save-status");
+        if (saveStatus) saveStatus.style.display = "none";
     }
 
     // Save & Update Framer button logic
