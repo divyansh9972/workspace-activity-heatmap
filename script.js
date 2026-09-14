@@ -246,15 +246,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Hide controls if NOT running on localhost
-    const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:';
+    const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
     if (!isLocalhost) {
         const controls = document.getElementById("ui-controls");
         if (controls) controls.style.display = "none";
         
         const saveStatus = document.getElementById("save-status");
         if (saveStatus) saveStatus.style.display = "none";
-    } else {
-        document.body.classList.add("local-mode");
     }
 
     // Save & Update Framer button logic

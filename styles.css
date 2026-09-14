@@ -85,9 +85,8 @@ body {
     display: flex;
     flex-direction: column;
     gap: 16px;
-    max-width: 100%;
+    width: 100%;
     margin: 0 auto;
-    width: fit-content;
 }
 
 /* Hide the ugly default scrollbar on the heatmap container but keep it scrollable */
@@ -97,17 +96,8 @@ body {
 .heatmap-container {
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
-}
-
-/* Local Development Mode (Applied via JS on localhost) */
-body.local-mode {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 24px;
-    min-height: 100vh;
-    background-color: var(--background);
+    max-width: 100%;
+    margin: 0 auto;
 }
 
 .controls {
