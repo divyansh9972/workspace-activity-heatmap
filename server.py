@@ -8,6 +8,18 @@ import threading
 PORT = 8000
 
 class ConfigHandler(http.server.SimpleHTTPRequestHandler):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+    extensions_map = http.server.SimpleHTTPRequestHandler.extensions_map.copy()
+    extensions_map.update({
+        '': 'application/octet-stream',
+        '.css': 'text/css',
+        '.html': 'text/html',
+        '.js': 'application/javascript',
+        '.json': 'application/json',
+    })
+
     def end_headers(self):
         self.send_header('Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0')
         self.send_header('Pragma', 'no-cache')

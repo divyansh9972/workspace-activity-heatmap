@@ -246,8 +246,8 @@ document.addEventListener("DOMContentLoaded", () => {
             const monthLabel = document.createElement("div");
             monthLabel.className = "month-label";
             monthLabel.textContent = months[monthIdx];
-            // Position in the middle of the ~4 week month block (approx 2 weeks offset)
-            monthLabel.style.left = `${currentWeek * COL_WIDTH + (COL_WIDTH * 2)}px`;
+            // Position in the middle of the ~5 week month block (approx 2.5 weeks offset)
+            monthLabel.style.left = `${currentWeek * COL_WIDTH + (COL_WIDTH * 2.5)}px`;
             monthLabel.style.transform = "translateX(-50%)";
             monthsContainer.appendChild(monthLabel);
         }
