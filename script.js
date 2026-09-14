@@ -246,4 +246,47 @@ document.addEventListener("DOMContentLoaded", () => {
             currentWeek++;
         }
     }
+
+    // Hide controls if embedded in Framer (iframe)
+    if (window.self !== window.top) {
+        const controls = document.getElementById("ui-controls");
+        if (controls) controls.style.display = "none";
+    }
+
+    // Save & Update Framer button logic
+    const saveBtn = document.getElementById("save-framer-btn");
+    const saveStatus = document.getElementById("save-status");
+    if (saveBtn) {
+        saveBtn.addEventListener("click", () => {
+            saveBtn.disabled = true;
+            saveBtn.textContent = "Updating...";
+            saveStatus.style.display = "block";
+            saveStatus.textContent = "";
+            saveStatus.style.color = "#059669";
+            
+            const isDark = document.body.classList.contains("dark");
+            const isHidden = heatmapWrapper && heatmapWrapper.classList.contains("heatmap-hidden");
+            
+            const payload = {
+                theme: isDark ? "dark" : "light",
+                levels: isHidden ? "hidden" : "visible",
+                tooltip: currentTooltipFormat
+            };
+            
+            fetch('/update', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(payload)
+            }).then(res => res.text()).then(msg => {
+                saveBtn.disabled = false;
+                saveBtn.textContent = "Save & Update Framer";
+                saveStatus.textContent = "Success! Framer will reflect changes in ~60 seconds.";
+            }).catch(err => {
+                saveBtn.disabled = false;
+                saveBtn.textContent = "Save & Update Framer";
+                saveStatus.style.color = "red";
+                saveStatus.textContent = "Error: You must run Settings.bat to use the Save button.";
+            });
+        });
+    }
 });

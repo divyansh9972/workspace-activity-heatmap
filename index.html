@@ -8,8 +8,35 @@
 </head>
 <body>
     <div class="app-container">
-
-        <div class="heatmap-container heatmap-hidden" id="heatmap-wrapper">
+        <div class="controls" id="ui-controls">
+            <div class="custom-select" id="tooltip-format-select">
+                <button class="custom-select-trigger" aria-expanded="false">
+                    <span class="custom-select-value">Show Tool Names</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="custom-select-icon"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="custom-select-content hidden">
+                    <div class="custom-select-item" data-value="detailed">
+                        <svg class="custom-select-check" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span class="custom-select-item-text">Show File Count</span>
+                    </div>
+                    <div class="custom-select-item active" data-value="tools">
+                        <svg class="custom-select-check" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span class="custom-select-item-text">Show Tool Names</span>
+                    </div>
+                    <div class="custom-select-item" data-value="simple">
+                        <svg class="custom-select-check" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span class="custom-select-item-text">Show Active Status</span>
+                    </div>
+                </div>
+            </div>
+            <button id="toggle-theme" class="icon-button" aria-label="Toggle theme">
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+            </button>
+            <button id="toggle-heatmap" class="toggle-button">Show Levels</button>
+            <button id="save-framer-btn" class="toggle-button" style="background-color: black; color: white; border-color: black; margin-left: auto;">Save & Update Framer</button>
+        </div>
+        <div id="save-status" style="display: none; color: #059669; font-size: 14px; text-align: right; margin-top: -8px;"></div>
             <div class="heatmap-header">
             <h2 id="contribution-count">0 tools created in the last year</h2>
             <div id="production-rate" class="production-rate">Production rate: 0 tools/month</div>
