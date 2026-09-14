@@ -4,6 +4,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const contributionCount = document.getElementById("contribution-count");
     const productionRate = document.getElementById("production-rate");
     const tooltip = document.getElementById("tooltip");
+    // Read configuration from python scanner output, or fallback to URL parameters
+    const serverConfig = typeof heatmapConfig !== 'undefined' ? heatmapConfig : {};
+    const urlParams = new URLSearchParams(window.location.search);
+    const themeParam = urlParams.get('theme') || serverConfig.theme || 'light';
+    const levelsParam = urlParams.get('levels') || serverConfig.levels || 'hidden';
+    const tooltipParam = urlParams.get('tooltip') || serverConfig.tooltip || 'tools';
+    
+    let currentTooltipFormat = tooltipParam;
+
     
     // Theme toggle
     const toggleThemeBtn = document.getElementById("toggle-theme");
@@ -17,6 +26,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const toggleBtn = document.getElementById("toggle-heatmap");
     const heatmapWrapper = document.getElementById("heatmap-wrapper");
     if (toggleBtn && heatmapWrapper) {
+        if (levelsParam === "hidden") {
+            toggleBtn.textContent = "Show Levels";
+        } else {
+            toggleBtn.textContent = "Hide Levels";
+        }
         toggleBtn.addEventListener("click", () => {
             if (heatmapWrapper.classList.contains("heatmap-hidden")) {
                 heatmapWrapper.classList.remove("heatmap-hidden");
@@ -35,6 +49,15 @@ document.addEventListener("DOMContentLoaded", () => {
         const selectValue = customSelect.querySelector(".custom-select-value");
         const selectContent = customSelect.querySelector(".custom-select-content");
         const selectItems = customSelect.querySelectorAll(".custom-select-item");
+
+        // Initialize dropdown state
+        selectItems.forEach(item => {
+            if (item.getAttribute("data-value") === tooltipParam) {
+                selectItems.forEach(i => i.classList.remove("active"));
+                item.classList.add("active");
+                selectValue.textContent = item.querySelector(".custom-select-item-text").textContent;
+            }
+        });
 
         // Toggle dropdown open/close
         selectTrigger.addEventListener("click", (e) => {
@@ -56,6 +79,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 const itemText = item.querySelector(".custom-select-item-text").textContent;
                 selectValue.textContent = itemText;
                 
+                // Update global format
+                currentTooltipFormat = item.getAttribute("data-value");
+                
                 // Close dropdown
                 selectContent.classList.add("hidden");
                 selectTrigger.setAttribute("aria-expanded", "false");
@@ -71,12 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Read configuration from python scanner output, or fallback to URL parameters
-    const serverConfig = typeof heatmapConfig !== 'undefined' ? heatmapConfig : {};
-    const urlParams = new URLSearchParams(window.location.search);
-    const themeParam = urlParams.get('theme') || serverConfig.theme || 'light';
-    const levelsParam = urlParams.get('levels') || serverConfig.levels || 'hidden';
-    const tooltipParam = urlParams.get('tooltip') || serverConfig.tooltip || 'tools';
+
     
     // Apply Theme
     if (themeParam === "dark") {
@@ -173,13 +194,7 @@ document.addEventListener("DOMContentLoaded", () => {
         cell.addEventListener("mouseenter", (e) => {
             const rect = cell.getBoundingClientRect();
             
-            // Dynamically check the dropdown format on hover
-            let format = tooltipParam;
-            const selectEl = document.getElementById("tooltip-format-select");
-            if (selectEl) {
-                const activeItem = selectEl.querySelector(".custom-select-item.active");
-                if (activeItem) format = activeItem.getAttribute("data-value");
-            }
+            const format = currentTooltipFormat;
             
             let tooltipText = `${displayDate}`;
             
@@ -269,17 +284,10 @@ document.addEventListener("DOMContentLoaded", () => {
             const isDark = document.body.classList.contains("dark");
             const isHidden = heatmapWrapper && heatmapWrapper.classList.contains("heatmap-hidden");
             
-            let tooltipFormat = tooltipParam;
-            const customSelect = document.getElementById("tooltip-format-select");
-            if (customSelect) {
-                const activeItem = customSelect.querySelector(".custom-select-item.active");
-                if (activeItem) tooltipFormat = activeItem.getAttribute("data-value");
-            }
-            
             const payload = {
                 theme: isDark ? "dark" : "light",
                 levels: isHidden ? "hidden" : "visible",
-                tooltip: tooltipFormat
+                tooltip: currentTooltipFormat
             };
             
             fetch('/update', {
