@@ -86,7 +86,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Apply Levels Mode
-    const heatmapWrapper = document.getElementById("heatmap-wrapper");
     if (heatmapWrapper) {
         if (levelsParam === "hidden") {
             heatmapWrapper.classList.add("heatmap-hidden");
