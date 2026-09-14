@@ -100,6 +100,17 @@ body {
     margin: 0 auto;
 }
 
+/* Local Development Mode (Applied via JS when viewed locally) */
+body.local-mode {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    min-height: 100vh;
+    background-color: var(--background);
+}
+
 .controls {
     display: flex;
     justify-content: flex-end;
