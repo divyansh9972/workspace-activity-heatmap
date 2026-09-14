@@ -170,18 +170,17 @@ document.addEventListener("DOMContentLoaded", () => {
         // Format for tooltip: "[Date], [Number of file changes], [Activity level]"
         const displayDate = `${months[currentDate.getMonth()]} ${currentDate.getDate()}`;
         
-        // Tooltip formatting logic
-        let currentTooltipFormat = tooltipParam;
-        
-        if (customSelect) {
-            const activeItem = customSelect.querySelector(".custom-select-item.active");
-            if (activeItem) currentTooltipFormat = activeItem.getAttribute("data-value");
-        }
-        
         cell.addEventListener("mouseenter", (e) => {
             const rect = cell.getBoundingClientRect();
             
-            const format = currentTooltipFormat;
+            // Dynamically check the dropdown format on hover
+            let format = tooltipParam;
+            const selectEl = document.getElementById("tooltip-format-select");
+            if (selectEl) {
+                const activeItem = selectEl.querySelector(".custom-select-item.active");
+                if (activeItem) format = activeItem.getAttribute("data-value");
+            }
+            
             let tooltipText = `${displayDate}`;
             
             if (count > 0) {

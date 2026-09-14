@@ -27,9 +27,9 @@ const heatmapData = {
     "2026-01-09": {
       "count": 26,
       "tools": [
-        "off_axis_project",
+        "ar_wifi_tracker",
         "bluetooth_tracker",
-        "ar_wifi_tracker"
+        "off_axis_project"
       ]
     },
     "2026-03-22": {
@@ -41,8 +41,8 @@ const heatmapData = {
     "2026-01-14": {
       "count": 24,
       "tools": [
-        "Old figma MCP",
-        "blender_hand_mocap"
+        "blender_hand_mocap",
+        "Old figma MCP"
       ]
     },
     "2026-01-13": {
@@ -68,9 +68,9 @@ const heatmapData = {
     "2026-09-11": {
       "count": 168,
       "tools": [
+        "design-review-chrome-extension",
         "DNS_Tracker",
         "College-Canteen",
-        "design-review-chrome-extension",
         "design-review",
         "Train UI"
       ]
@@ -78,16 +78,16 @@ const heatmapData = {
     "2026-09-12": {
       "count": 107,
       "tools": [
-        "design-review",
-        "Train UI"
+        "Train UI",
+        "design-review"
       ]
     },
     "2026-09-13": {
       "count": 438,
       "tools": [
-        "design-review",
         "design-system",
-        "Train UI"
+        "Train UI",
+        "design-review"
       ]
     },
     "2026-09-09": {
@@ -100,8 +100,8 @@ const heatmapData = {
       "count": 26,
       "tools": [
         "google_tasks_extension_v3",
-        "DoSimply Work Update",
-        "DoSimply"
+        "DoSimply",
+        "DoSimply Work Update"
       ]
     },
     "2026-01-10": {
@@ -113,36 +113,36 @@ const heatmapData = {
     "2026-02-23": {
       "count": 20,
       "tools": [
-        "DoSimply Work Update",
-        "livekit-vercel-api"
+        "livekit-vercel-api",
+        "DoSimply Work Update"
       ]
     },
     "2026-04-21": {
       "count": 142,
       "tools": [
-        "EchoComment_Project",
-        "Train UI"
+        "Train UI",
+        "EchoComment_Project"
       ]
     },
     "2026-05-01": {
       "count": 101,
       "tools": [
-        "EchoComment_Project",
-        "Train UI"
+        "Train UI",
+        "EchoComment_Project"
       ]
     },
     "2026-04-16": {
       "count": 90,
       "tools": [
-        "EchoComment_Project",
-        "Train UI"
+        "Train UI",
+        "EchoComment_Project"
       ]
     },
     "2026-04-19": {
       "count": 69,
       "tools": [
-        "EchoComment_Project",
-        "Train UI"
+        "Train UI",
+        "EchoComment_Project"
       ]
     },
     "2026-04-25": {
@@ -160,23 +160,23 @@ const heatmapData = {
     "2026-05-02": {
       "count": 32,
       "tools": [
-        "EchoComment_Project",
-        "Train UI"
+        "Train UI",
+        "EchoComment_Project"
       ]
     },
     "2026-05-04": {
       "count": 39,
       "tools": [
-        "EchoComment_Project",
-        "Train UI"
+        "Train UI",
+        "EchoComment_Project"
       ]
     },
     "2026-05-19": {
       "count": 36,
       "tools": [
+        "Train UI",
         "figma-remote-clicker",
-        "EchoComment_Project",
-        "Train UI"
+        "EchoComment_Project"
       ]
     },
     "2026-03-03": {
@@ -194,23 +194,23 @@ const heatmapData = {
     "2026-09-01": {
       "count": 94,
       "tools": [
+        "gemini-projects-workspace",
         "Figma all plugin",
-        "figma-match-layout-plugin",
-        "gemini-projects-workspace"
+        "figma-match-layout-plugin"
       ]
     },
     "2026-06-30": {
       "count": 39,
       "tools": [
-        "Figma all plugin",
-        "figma book simulator"
+        "figma book simulator",
+        "Figma all plugin"
       ]
     },
     "2026-07-01": {
       "count": 76,
       "tools": [
-        "Figma all plugin",
-        "remove-mdash-figma-plugin"
+        "remove-mdash-figma-plugin",
+        "Figma all plugin"
       ]
     },
     "2026-07-17": {
@@ -222,8 +222,8 @@ const heatmapData = {
     "2026-07-18": {
       "count": 84,
       "tools": [
-        "Figma all plugin",
-        "dil"
+        "dil",
+        "Figma all plugin"
       ]
     },
     "2026-07-19": {
@@ -235,16 +235,16 @@ const heatmapData = {
     "2026-07-26": {
       "count": 159,
       "tools": [
-        "Figma all plugin",
         "canteen-pwa",
-        "College-Canteen"
+        "College-Canteen",
+        "Figma all plugin"
       ]
     },
     "2026-08-01": {
       "count": 11,
       "tools": [
-        "Figma all plugin",
-        "PostureMonitor_Suite"
+        "PostureMonitor_Suite",
+        "Figma all plugin"
       ]
     },
     "2026-08-03": {
@@ -257,19 +257,19 @@ const heatmapData = {
     "2026-06-05": {
       "count": 26,
       "tools": [
-        "MangaReader_Project",
-        "figma-color-mapper",
-        "figma-auto-layout-plugin",
         "Figma all plugin",
+        "figma-auto-layout-plugin",
         "Snap",
-        "Train UI"
+        "Train UI",
+        "MangaReader_Project",
+        "figma-color-mapper"
       ]
     },
     "2026-07-23": {
       "count": 9,
       "tools": [
-        "Figma all plugin",
-        "html-to-figma"
+        "html-to-figma",
+        "Figma all plugin"
       ]
     },
     "2026-06-02": {
@@ -283,42 +283,42 @@ const heatmapData = {
     "2026-06-26": {
       "count": 37,
       "tools": [
-        "figma_text_style_generator",
+        "figma-element-replacer",
         "Figma all plugin",
         "figma-match-layout-plugin",
         "figma-remove-drop-shadow",
-        "figma-element-replacer"
+        "figma_text_style_generator"
       ]
     },
     "2026-06-22": {
       "count": 12,
       "tools": [
-        "Figma all plugin",
-        "figma-font-replacer"
+        "figma-font-replacer",
+        "Figma all plugin"
       ]
     },
     "2026-06-28": {
       "count": 8,
       "tools": [
-        "Figma all plugin",
-        "figma-text-color-style-matcher"
+        "figma-text-color-style-matcher",
+        "Figma all plugin"
       ]
     },
     "2026-06-01": {
       "count": 15,
       "tools": [
-        "Figma all plugin",
-        "Resize",
+        "figma-text-style-matcher",
         "figma-text-color-style-matcher",
-        "figma-text-style-matcher"
+        "Figma all plugin",
+        "Resize"
       ]
     },
     "2026-06-24": {
       "count": 41,
       "tools": [
-        "Figma all plugin",
+        "text-splitter-plugin",
         "figma book simulator",
-        "text-splitter-plugin"
+        "Figma all plugin"
       ]
     },
     "2026-06-19": {
@@ -355,8 +355,8 @@ const heatmapData = {
     "2026-06-06": {
       "count": 8,
       "tools": [
-        "figma-component-replacer",
-        "figma-text-style-matcher"
+        "figma-text-style-matcher",
+        "figma-component-replacer"
       ]
     },
     "2026-07-28": {
@@ -420,24 +420,17 @@ const heatmapData = {
         "figma_text_style_generator"
       ]
     },
-    "2026-05-21": {
-      "count": 133,
-      "tools": [
-        "html-to-figma",
-        "financial-strategy-engine"
-      ]
-    },
     "2026-05-23": {
       "count": 27,
       "tools": [
         "financial-strategy-engine"
       ]
     },
-    "2026-05-22": {
-      "count": 28,
+    "2026-05-21": {
+      "count": 133,
       "tools": [
-        "html-to-figma",
-        "gemini-projects-workspace"
+        "financial-strategy-engine",
+        "html-to-figma"
       ]
     },
     "2026-05-28": {
@@ -446,25 +439,32 @@ const heatmapData = {
         "gemini-projects-workspace"
       ]
     },
+    "2026-05-22": {
+      "count": 28,
+      "tools": [
+        "gemini-projects-workspace",
+        "html-to-figma"
+      ]
+    },
     "2026-05-20": {
       "count": 6222,
       "tools": [
-        "GeminiProjects",
-        "DoSimply Work Update",
-        "ar_wifi_tracker",
-        "EchoComment_Project",
-        "figma-remote-clicker",
-        "antigravity_particles",
         "audio-visualizer-editor",
+        "figma-remote-clicker",
+        "EchoComment_Project",
+        "GeminiProjects",
+        "gemini-projects-workspace",
+        "ar_wifi_tracker",
         "blender_hand_mocap",
-        "blender_phone_cam",
-        "gesture_mouse_control",
-        "farmer-voice-agent",
-        "bluetooth_tracker",
-        "figma_text_style_generator",
         "DoSimply",
         "figma-mcp-server",
-        "gemini-projects-workspace"
+        "gesture_mouse_control",
+        "antigravity_particles",
+        "figma_text_style_generator",
+        "blender_phone_cam",
+        "DoSimply Work Update",
+        "bluetooth_tracker",
+        "farmer-voice-agent"
       ]
     },
     "2026-05-29": {
@@ -476,8 +476,8 @@ const heatmapData = {
     "2026-08-31": {
       "count": 77,
       "tools": [
-        "pattern-to-component",
-        "gemini-projects-workspace"
+        "gemini-projects-workspace",
+        "pattern-to-component"
       ]
     },
     "2026-09-04": {
@@ -531,8 +531,8 @@ const heatmapData = {
     "2026-07-08": {
       "count": 14,
       "tools": [
-        "Projects",
-        "layout-guide-plugin"
+        "layout-guide-plugin",
+        "Projects"
       ]
     },
     "2026-02-24": {
@@ -551,13 +551,13 @@ const heatmapData = {
     "2026-07-09": {
       "count": 249,
       "tools": [
-        "MangaReader_Project",
         "Projects",
-        "College-Canteen",
+        "canteen-pwa",
         "pdf-teleprompter",
         "dil",
-        "canteen-pwa",
-        "Train UI"
+        "College-Canteen",
+        "Train UI",
+        "MangaReader_Project"
       ]
     },
     "2026-08-30": {
@@ -570,17 +570,17 @@ const heatmapData = {
     "2026-07-22": {
       "count": 35,
       "tools": [
-        "transparent-stroke-plugin",
         "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "transparent-stroke-plugin"
       ]
     },
     "2026-08-04": {
       "count": 68,
       "tools": [
         "Train UI",
-        "career-intelligence-platform",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "career-intelligence-platform"
       ]
     },
     "2025-01-07": {
@@ -664,8 +664,8 @@ const heatmapData = {
       "count": 27,
       "tools": [
         "Train UI",
-        "Old figma MCP",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Old figma MCP"
       ]
     },
     "2026-04-14": {
@@ -1946,9 +1946,9 @@ const heatmapData = {
     "2026-09-14": {
       "count": 938,
       "tools": [
-        "Train UI",
         "design-system",
         "test-validation",
+        "Train UI",
         "shadcn-real"
       ]
     },
@@ -1981,5 +1981,5 @@ const heatmapData = {
   "totalLastYear": 26259,
   "totalTools": 83,
   "productionRate": 6.9,
-  "lastUpdated": "2026-09-14T21:33:19.703561"
+  "lastUpdated": "2026-09-14T21:36:17.569101"
 };
