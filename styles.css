@@ -73,23 +73,29 @@
 }
 
 body {
-    background-color: var(--background);
+    background-color: transparent; /* Let Framer's background show through */
     color: var(--foreground);
     font-family: "Inter", "Roboto", system-ui, sans-serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Centers vertically */
-    padding: 24px;
-    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+    overflow: hidden; /* Hide nasty iframe vertical scrollbars */
 }
 
 .app-container {
     display: flex;
     flex-direction: column;
     gap: 16px;
-    max-width: 100%;
-    margin: 0 auto;
-    width: fit-content;
+    max-width: fit-content;
+    margin: 0 auto; /* Center horizontally in the iframe */
+}
+
+/* Hide the ugly default scrollbar on the heatmap container but keep it scrollable */
+.heatmap-container::-webkit-scrollbar {
+    display: none;
+}
+.heatmap-container {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }
 
 .controls {
@@ -399,12 +405,9 @@ body.dark .sun-icon {
 
 /* Responsiveness for Tablet and Mobile */
 @media (max-width: 768px) {
-    body {
-        padding: 12px;
-    }
     .app-container {
-        padding: 0;
         width: 100%;
+        max-width: 100%;
     }
     .controls {
         flex-wrap: wrap;
