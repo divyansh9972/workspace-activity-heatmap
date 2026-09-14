@@ -1,0 +1,441 @@
+:root {
+  /* Colors */
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.488 0.243 264.376);
+  --primary-foreground: oklch(0.97 0.014 254.604);
+  --secondary: oklch(0.967 0.001 286.375);
+  --secondary-foreground: oklch(0.21 0.006 285.885);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --radius: 0.625rem;
+
+  /* Typography */
+  --text-xs: 0.75rem;     /* 12px */
+  --text-sm: 0.875rem;    /* 14px */
+  --text-base: 1rem;      /* 16px */
+  --text-lg: 1.125rem;    /* 18px */
+  --text-xl: 1.25rem;     /* 20px */
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+
+  /* Heatmap */
+  --cell-size: 11px;
+  --cell-gap: 3px;
+  --level-0: var(--muted);
+  --level-1: color-mix(in oklch, var(--primary) 25%, transparent);
+  --level-2: color-mix(in oklch, var(--primary) 50%, transparent);
+  --level-3: color-mix(in oklch, var(--primary) 75%, transparent);
+  --level-4: var(--primary);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.7 0.199 265.638);
+  --primary-foreground: oklch(0.97 0.014 254.604);
+  --secondary: oklch(0.274 0.006 286.033);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+
+  /* Heatmap Dark Mode Overrides */
+  --level-0: var(--muted);
+  --level-1: color-mix(in oklch, var(--primary) 25%, transparent);
+  --level-2: color-mix(in oklch, var(--primary) 50%, transparent);
+  --level-3: color-mix(in oklch, var(--primary) 75%, transparent);
+  --level-4: var(--primary);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: "Inter", "Roboto", system-ui, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers vertically */
+    padding: 24px;
+    min-height: 100vh;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 100%;
+    margin: 0 auto;
+    width: fit-content;
+}
+
+.controls {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+/* Button variant="outline" styling as per design system */
+.toggle-button {
+    background-color: var(--background);
+    color: var(--foreground);
+    border: 1px solid var(--border);
+    padding: 0.5rem 1rem;
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: 0.2s;
+    outline: none;
+}
+
+.toggle-button:hover {
+    background-color: var(--accent);
+    color: var(--accent-foreground);
+}
+
+.toggle-button:focus-visible {
+    border-color: var(--ring);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--ring) 50%, transparent);
+}
+
+/* Icon Button Styling for Theme Toggle */
+.icon-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius);
+    height: 2.5rem;
+    width: 2.5rem;
+    background-color: transparent;
+    color: var(--foreground);
+    border: 1px solid var(--input);
+    cursor: pointer;
+    transition: 0.2s;
+    outline: none;
+    flex-shrink: 0;
+}
+.icon-button:hover {
+    background-color: var(--accent);
+    color: var(--accent-foreground);
+}
+.icon-button:focus-visible {
+    box-shadow: 0 0 0 2px var(--background), 0 0 0 4px var(--ring);
+}
+/* Sun/Moon Icon Swapping Logic */
+body:not(.dark) .moon-icon {
+    display: none;
+}
+body.dark .sun-icon {
+    display: none;
+}
+
+/* Custom Select Component (Shadcn Style) */
+.custom-select {
+    position: relative;
+    width: 200px;
+}
+.custom-select-trigger {
+    display: flex;
+    height: 2.5rem;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: var(--radius);
+    border: 1px solid var(--input);
+    background-color: var(--background);
+    padding: 0.5rem 0.75rem;
+    font-size: var(--text-sm);
+    color: var(--foreground);
+    cursor: pointer;
+    outline: none;
+}
+.custom-select-trigger:focus-visible {
+    box-shadow: 0 0 0 2px var(--background), 0 0 0 4px var(--ring);
+}
+.custom-select-icon {
+    width: 1rem;
+    height: 1rem;
+    opacity: 0.5;
+}
+.custom-select-content {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    width: 100%;
+    z-index: 50;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    background-color: var(--popover);
+    color: var(--popover-foreground);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    padding: 0.25rem;
+}
+.custom-select-item {
+    position: relative;
+    display: flex;
+    width: 100%;
+    cursor: default;
+    user-select: none;
+    align-items: center;
+    border-radius: calc(var(--radius) - 2px);
+    /* padding: top right bottom left -> Extra padding on the right for the checkmark */
+    padding: 0.375rem 2rem 0.375rem 0.5rem;
+    font-size: var(--text-sm);
+    outline: none;
+}
+.custom-select-item:hover {
+    background-color: var(--accent);
+    color: var(--accent-foreground);
+}
+.custom-select-check {
+    position: absolute;
+    right: 0.5rem;
+    width: 1rem;
+    height: 1rem;
+    display: none; /* hidden by default */
+}
+.custom-select-item.active .custom-select-check {
+    display: block; /* show checkmark if active */
+}
+
+.heatmap-container {
+    background-color: var(--card);
+    color: var(--card-foreground);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.heatmap-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+#contribution-count {
+    font-size: var(--text-base);
+    font-weight: var(--font-semibold);
+}
+
+.production-rate {
+    font-size: var(--text-sm);
+    color: var(--muted-foreground);
+}
+
+.heatmap-body {
+    display: flex;
+    gap: 8px;
+    position: relative;
+}
+
+.weekdays {
+    display: grid;
+    grid-template-rows: repeat(7, var(--cell-size));
+    gap: var(--cell-gap);
+    margin-top: 18px; /* Offset for month labels */
+    font-size: var(--text-xs);
+    color: var(--muted-foreground);
+    text-align: right;
+    padding-right: 4px;
+}
+
+.weekday-label {
+    line-height: var(--cell-size);
+}
+
+.weekday-hidden {
+    visibility: hidden;
+}
+
+.grid-scroll {
+    display: flex;
+    flex-direction: column;
+}
+
+.months {
+    display: flex;
+    font-size: var(--text-xs);
+    color: var(--muted-foreground);
+    margin-bottom: 4px;
+    position: relative;
+    height: 14px;
+}
+
+.month-label {
+    position: absolute;
+}
+
+.grid {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(7, var(--cell-size));
+    grid-auto-columns: var(--cell-size);
+    gap: var(--cell-gap);
+}
+
+.cell {
+    width: var(--cell-size);
+    height: var(--cell-size);
+    border-radius: 2px;
+}
+
+.level-0 { 
+    background-color: var(--level-0);
+}
+.level-1 { background-color: var(--level-1); }
+.level-2 { background-color: var(--level-2); }
+.level-3 { background-color: var(--level-3); }
+.level-4 { background-color: var(--level-4); }
+
+.heatmap-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+    font-size: var(--text-xs);
+    color: var(--muted-foreground);
+}
+
+.legend-container {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: opacity 0.2s;
+}
+
+.legend-scale {
+    display: flex;
+    gap: 3px;
+}
+
+.legend-box {
+    width: var(--cell-size);
+    height: var(--cell-size);
+    border-radius: 2px;
+}
+
+/* Tooltip styled as Popover/Tooltip from design system */
+.tooltip {
+    position: absolute;
+    background-color: var(--foreground);
+    color: var(--background);
+    border: none;
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--radius);
+    font-size: var(--text-xs);
+    pointer-events: none;
+    z-index: 100;
+    white-space: pre-wrap;
+    text-align: center;
+    transform: translate(-50%, -100%);
+    margin-top: -8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* The Triangle Arrow Hack */
+.tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%; /* Position right at the bottom edge */
+    left: 50%; /* Center horizontally */
+    /* Radix SVG arrow is exactly 10px wide and 5px tall. 
+       A 7x7 square rotated 45deg creates exactly a 10px base and 5px height! */
+    width: 7px;
+    height: 7px;
+    background-color: var(--foreground);
+    /* Center it perfectly on the bottom edge, then rotate 45deg to make a diamond */
+    transform: translate(-50%, -50%) rotate(45deg);
+    /* Only round the bottom-right corner (which becomes the downward tip after rotation) */
+    /* This keeps the attaching sides perfectly sharp so they merge seamlessly! */
+    border-radius: 0 0 2px 0;
+    /* Push it behind the tooltip background so it doesn't overlap text */
+    z-index: -1;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Unified Heatmap Mode (Toggle State) */
+.heatmap-hidden .cell:not(.level-0) {
+    background-color: var(--level-4) !important;
+}
+
+.heatmap-hidden .legend-container {
+    display: none;
+}
+
+.heatmap-hidden .last-updated {
+    margin-left: auto;
+}
+
+/* Responsiveness for Tablet and Mobile */
+@media (max-width: 768px) {
+    body {
+        padding: 12px;
+    }
+    .app-container {
+        padding: 0;
+        width: 100%;
+    }
+    .controls {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+    .custom-select {
+        width: 100%;
+        margin-right: 0 !important;
+        margin-bottom: 8px;
+    }
+    .heatmap-container {
+        padding: 16px;
+    }
+    .heatmap-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+    .heatmap-footer {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    .heatmap-hidden .last-updated {
+        margin-left: 0;
+    }
+    .heatmap-body {
+        padding-bottom: 12px;
+    }
+    /* Smooth momentum scrolling for iOS/Touch devices */
+    .heatmap-container {
+        -webkit-overflow-scrolling: touch;
+    }
+}

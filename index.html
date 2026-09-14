@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workspace Activity Heatmap</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+
+        <div class="heatmap-container heatmap-hidden" id="heatmap-wrapper">
+            <div class="heatmap-header">
+            <h2 id="contribution-count">0 tools created in the last year</h2>
+            <div id="production-rate" class="production-rate">Production rate: 0 tools/month</div>
+        </div>
+        
+        <div class="heatmap-body">
+            <div class="weekdays">
+                <div class="weekday-label weekday-hidden">Sun</div>
+                <div class="weekday-label">Mon</div>
+                <div class="weekday-label weekday-hidden">Tue</div>
+                <div class="weekday-label">Wed</div>
+                <div class="weekday-label weekday-hidden">Thu</div>
+                <div class="weekday-label">Fri</div>
+                <div class="weekday-label weekday-hidden">Sat</div>
+            </div>
+            
+            <div class="grid-scroll">
+                <div class="months" id="months-container">
+                    <!-- Months dynamically added -->
+                </div>
+                <div class="grid" id="heatmap-grid">
+                    <!-- Days dynamically added -->
+                </div>
+            </div>
+        </div>
+
+        <div class="heatmap-footer">
+            <div id="last-updated" class="last-updated">Updated: just now</div>
+            <div class="legend-container">
+                <span>Less</span>
+                <div class="legend-scale">
+                    <div class="legend-box level-0"></div>
+                    <div class="legend-box level-1"></div>
+                    <div class="legend-box level-2"></div>
+                    <div class="legend-box level-3"></div>
+                    <div class="legend-box level-4"></div>
+                </div>
+                <span>More</span>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Tooltip -->
+    <div id="tooltip" class="tooltip hidden"></div>
+
+    <!-- Data and Script -->
+    <script src="activity-data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
