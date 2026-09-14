@@ -71,11 +71,12 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Read configuration from URL parameters (Embed properties)
+    // Read configuration from python scanner output, or fallback to URL parameters
+    const serverConfig = typeof heatmapConfig !== 'undefined' ? heatmapConfig : {};
     const urlParams = new URLSearchParams(window.location.search);
-    const themeParam = urlParams.get('theme') || 'light';
-    const levelsParam = urlParams.get('levels') || 'hidden';
-    const tooltipParam = urlParams.get('tooltip') || 'tools';
+    const themeParam = urlParams.get('theme') || serverConfig.theme || 'light';
+    const levelsParam = urlParams.get('levels') || serverConfig.levels || 'hidden';
+    const tooltipParam = urlParams.get('tooltip') || serverConfig.tooltip || 'tools';
     
     // Apply Theme
     if (themeParam === "dark") {

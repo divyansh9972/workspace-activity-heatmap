@@ -65,9 +65,17 @@ def main():
         "lastUpdated": datetime.now().isoformat()
     }
             
+    # Read settings config
+    config = {"theme": "light", "levels": "hidden", "tooltip": "tools"}
+    config_path = os.path.join(os.path.dirname(__file__), 'config.json')
+    if os.path.exists(config_path):
+        with open(config_path, 'r') as f:
+            config = json.load(f)
+
     # Output to JS file
     out_path = os.path.join(os.path.dirname(__file__), 'activity-data.js')
     with open(out_path, 'w', encoding='utf-8') as f:
+        f.write(f"const heatmapConfig = {json.dumps(config, indent=2)};\n")
         f.write(f"const heatmapData = {json.dumps(output_data, indent=2)};\n")
         
     print(f"Generated data for {len(activity_data)} days. Total last year: {total_last_year}")
