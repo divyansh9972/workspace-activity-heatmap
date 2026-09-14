@@ -85,7 +85,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 16px;
-    width: 100%;
+    width: fit-content;
     max-width: 100%;
     margin: 0 auto;
 }
