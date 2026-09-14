@@ -71,6 +71,29 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    // Read configuration from URL parameters (Embed properties)
+    const urlParams = new URLSearchParams(window.location.search);
+    const themeParam = urlParams.get('theme') || 'light';
+    const levelsParam = urlParams.get('levels') || 'hidden';
+    const tooltipParam = urlParams.get('tooltip') || 'tools';
+    
+    // Apply Theme
+    if (themeParam === "dark") {
+        document.body.classList.add("dark");
+    } else {
+        document.body.classList.remove("dark");
+    }
+
+    // Apply Levels Mode
+    const heatmapWrapper = document.getElementById("heatmap-wrapper");
+    if (heatmapWrapper) {
+        if (levelsParam === "hidden") {
+            heatmapWrapper.classList.add("heatmap-hidden");
+        } else {
+            heatmapWrapper.classList.remove("heatmap-hidden");
+        }
+    }
+
     // 'const' in global scope does not attach to 'window', so we reference it directly
     const data = typeof heatmapData !== 'undefined' ? heatmapData : { contributions: {}, totalLastYear: 0, totalTools: 0, productionRate: 0, lastUpdated: null };
     const currentYearForHeader = new Date().getFullYear();
@@ -148,7 +171,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const displayDate = `${months[currentDate.getMonth()]} ${currentDate.getDate()}`;
         
         // Tooltip formatting logic
-        let currentTooltipFormat = "tools";
+        let currentTooltipFormat = tooltipParam;
         
         if (customSelect) {
             const activeItem = customSelect.querySelector(".custom-select-item.active");
