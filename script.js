@@ -266,10 +266,17 @@ document.addEventListener("DOMContentLoaded", () => {
             const isDark = document.body.classList.contains("dark");
             const isHidden = heatmapWrapper && heatmapWrapper.classList.contains("heatmap-hidden");
             
+            let tooltipFormat = tooltipParam;
+            const customSelect = document.getElementById("tooltip-format-select");
+            if (customSelect) {
+                const activeItem = customSelect.querySelector(".custom-select-item.active");
+                if (activeItem) tooltipFormat = activeItem.getAttribute("data-value");
+            }
+            
             const payload = {
                 theme: isDark ? "dark" : "light",
                 levels: isHidden ? "hidden" : "visible",
-                tooltip: currentTooltipFormat
+                tooltip: tooltipFormat
             };
             
             fetch('/update', {
