@@ -28,8 +28,8 @@ const heatmapData = {
       "count": 26,
       "tools": [
         "bluetooth_tracker",
-        "ar_wifi_tracker",
-        "off_axis_project"
+        "off_axis_project",
+        "ar_wifi_tracker"
       ]
     },
     "2026-03-22": {
@@ -41,8 +41,8 @@ const heatmapData = {
     "2026-01-14": {
       "count": 24,
       "tools": [
-        "Old figma MCP",
-        "blender_hand_mocap"
+        "blender_hand_mocap",
+        "Old figma MCP"
       ]
     },
     "2026-01-13": {
@@ -68,21 +68,21 @@ const heatmapData = {
     "2026-10-13": {
       "count": 162,
       "tools": [
-        "FieldTimeTrackerAndroid",
         "PersonalTypingTracker",
+        "crops_orig",
         "crops_gen",
         "hdfc-smart-eslip-flow",
-        "crops_orig"
+        "FieldTimeTrackerAndroid"
       ]
     },
     "2026-09-15": {
-      "count": 799,
+      "count": 798,
       "tools": [
-        "Train UI",
         "design-system",
+        "design-systems",
+        "Train UI",
         "preset-test",
-        "design-review",
-        "design-systems"
+        "design-review"
       ]
     },
     "2026-09-18": {
@@ -95,10 +95,10 @@ const heatmapData = {
     "2026-09-13": {
       "count": 861,
       "tools": [
-        "Train UI",
-        "design-review",
         "design-system",
-        "design-systems"
+        "design-systems",
+        "Train UI",
+        "design-review"
       ]
     },
     "2026-09-12": {
@@ -117,11 +117,11 @@ const heatmapData = {
     "2026-09-11": {
       "count": 203,
       "tools": [
-        "Train UI",
-        "design-review-chrome-extension",
-        "College-Canteen",
         "DNS_Tracker",
-        "design-review"
+        "design-review-chrome-extension",
+        "Train UI",
+        "design-review",
+        "College-Canteen"
       ]
     },
     "2026-09-25": {
@@ -149,10 +149,9 @@ const heatmapData = {
         "design-review"
       ]
     },
-    "2026-10-21": {
-      "count": 8,
+    "2026-10-22": {
+      "count": 3,
       "tools": [
-        "vlc_gesture",
         "design-review"
       ]
     },
@@ -165,8 +164,8 @@ const heatmapData = {
     "2026-01-08": {
       "count": 26,
       "tools": [
-        "google_tasks_extension_v3",
         "DoSimply Work Update",
+        "google_tasks_extension_v3",
         "DoSimply"
       ]
     },
@@ -189,32 +188,32 @@ const heatmapData = {
         "drop-viewer"
       ]
     },
-    "2026-04-21": {
-      "count": 142,
-      "tools": [
-        "Train UI",
-        "EchoComment_Project"
-      ]
-    },
     "2026-05-01": {
       "count": 101,
       "tools": [
-        "Train UI",
-        "EchoComment_Project"
+        "EchoComment_Project",
+        "Train UI"
+      ]
+    },
+    "2026-04-21": {
+      "count": 142,
+      "tools": [
+        "EchoComment_Project",
+        "Train UI"
       ]
     },
     "2026-04-16": {
       "count": 90,
       "tools": [
-        "Train UI",
-        "EchoComment_Project"
+        "EchoComment_Project",
+        "Train UI"
       ]
     },
     "2026-04-19": {
       "count": 69,
       "tools": [
-        "Train UI",
-        "EchoComment_Project"
+        "EchoComment_Project",
+        "Train UI"
       ]
     },
     "2026-04-25": {
@@ -232,24 +231,24 @@ const heatmapData = {
     "2026-05-02": {
       "count": 36,
       "tools": [
-        "Train UI",
+        "EchoComment_Project",
         "FieldTimeTrackerAndroid",
-        "EchoComment_Project"
+        "Train UI"
       ]
     },
     "2026-05-04": {
       "count": 39,
       "tools": [
-        "Train UI",
-        "EchoComment_Project"
+        "EchoComment_Project",
+        "Train UI"
       ]
     },
     "2026-05-19": {
       "count": 36,
       "tools": [
-        "figma-remote-clicker",
+        "EchoComment_Project",
         "Train UI",
-        "EchoComment_Project"
+        "figma-remote-clicker"
       ]
     },
     "2026-03-03": {
@@ -268,10 +267,10 @@ const heatmapData = {
     "2026-09-17": {
       "count": 230,
       "tools": [
-        "Train UI",
         "field-time-tracker",
-        "Snap",
-        "design-systems"
+        "design-systems",
+        "Train UI",
+        "Snap"
       ]
     },
     "2026-06-29": {
@@ -283,8 +282,8 @@ const heatmapData = {
     "2026-09-01": {
       "count": 94,
       "tools": [
-        "gemini-projects-workspace",
         "figma-match-layout-plugin",
+        "gemini-projects-workspace",
         "Figma all plugin"
       ]
     },
@@ -346,12 +345,12 @@ const heatmapData = {
     "2026-06-05": {
       "count": 26,
       "tools": [
-        "Train UI",
         "figma-color-mapper",
-        "Figma all plugin",
+        "Snap",
+        "Train UI",
         "MangaReader_Project",
         "figma-auto-layout-plugin",
-        "Snap"
+        "Figma all plugin"
       ]
     },
     "2026-07-23": {
@@ -372,11 +371,11 @@ const heatmapData = {
     "2026-06-26": {
       "count": 37,
       "tools": [
-        "figma-element-replacer",
         "figma-remove-drop-shadow",
-        "Figma all plugin",
         "figma_text_style_generator",
-        "figma-match-layout-plugin"
+        "figma-element-replacer",
+        "figma-match-layout-plugin",
+        "Figma all plugin"
       ]
     },
     "2026-06-22": {
@@ -397,8 +396,8 @@ const heatmapData = {
       "count": 15,
       "tools": [
         "figma-text-style-matcher",
-        "Resize",
         "figma-text-color-style-matcher",
+        "Resize",
         "Figma all plugin"
       ]
     },
@@ -437,8 +436,8 @@ const heatmapData = {
     "2026-07-06": {
       "count": 4,
       "tools": [
-        "figma book simulator",
-        "remove-mdash-figma-plugin"
+        "remove-mdash-figma-plugin",
+        "figma book simulator"
       ]
     },
     "2026-06-06": {
@@ -509,17 +508,17 @@ const heatmapData = {
         "figma_text_style_generator"
       ]
     },
-    "2026-05-21": {
-      "count": 133,
-      "tools": [
-        "html-to-figma",
-        "financial-strategy-engine"
-      ]
-    },
     "2026-05-23": {
       "count": 27,
       "tools": [
         "financial-strategy-engine"
+      ]
+    },
+    "2026-05-21": {
+      "count": 133,
+      "tools": [
+        "financial-strategy-engine",
+        "html-to-figma"
       ]
     },
     "2026-05-22": {
@@ -538,22 +537,22 @@ const heatmapData = {
     "2026-05-20": {
       "count": 6222,
       "tools": [
-        "bluetooth_tracker",
+        "audio-visualizer-editor",
         "EchoComment_Project",
+        "blender_hand_mocap",
+        "bluetooth_tracker",
+        "figma_text_style_generator",
+        "farmer-voice-agent",
+        "gesture_mouse_control",
+        "figma-remote-clicker",
         "GeminiProjects",
         "antigravity_particles",
-        "figma-remote-clicker",
-        "gemini-projects-workspace",
-        "ar_wifi_tracker",
         "blender_phone_cam",
-        "DoSimply",
-        "audio-visualizer-editor",
-        "farmer-voice-agent",
-        "figma_text_style_generator",
-        "gesture_mouse_control",
         "DoSimply Work Update",
+        "gemini-projects-workspace",
+        "DoSimply",
         "figma-mcp-server",
-        "blender_hand_mocap"
+        "ar_wifi_tracker"
       ]
     },
     "2026-05-29": {
@@ -565,8 +564,8 @@ const heatmapData = {
     "2026-08-31": {
       "count": 77,
       "tools": [
-        "pattern-to-component",
-        "gemini-projects-workspace"
+        "gemini-projects-workspace",
+        "pattern-to-component"
       ]
     },
     "2026-09-04": {
@@ -591,6 +590,12 @@ const heatmapData = {
       "count": 122,
       "tools": [
         "google-tasks-widget"
+      ]
+    },
+    "2026-10-24": {
+      "count": 3,
+      "tools": [
+        "hdfc-smart-eslip-flow"
       ]
     },
     "2026-10-18": {
@@ -632,8 +637,8 @@ const heatmapData = {
     "2026-07-08": {
       "count": 14,
       "tools": [
-        "Projects",
-        "layout-guide-plugin"
+        "layout-guide-plugin",
+        "Projects"
       ]
     },
     "2026-10-17": {
@@ -648,1300 +653,1300 @@ const heatmapData = {
         "livekit-vercel-api"
       ]
     },
-    "2026-07-09": {
-      "count": 249,
-      "tools": [
-        "Train UI",
-        "College-Canteen",
-        "canteen-pwa",
-        "pdf-teleprompter",
-        "Projects",
-        "MangaReader_Project",
-        "dil"
-      ]
-    },
     "2026-07-21": {
       "count": 447,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
-    "2026-07-22": {
-      "count": 35,
+    "2026-07-09": {
+      "count": 249,
       "tools": [
+        "canteen-pwa",
+        "Projects",
         "Train UI",
+        "pdf-teleprompter",
         "MangaReader_Project",
-        "transparent-stroke-plugin"
+        "dil",
+        "College-Canteen"
       ]
     },
     "2026-08-30": {
       "count": 462,
       "tools": [
+        "MangaReader_Project",
+        "Train UI"
+      ]
+    },
+    "2026-07-22": {
+      "count": 35,
+      "tools": [
+        "MangaReader_Project",
         "Train UI",
-        "MangaReader_Project"
+        "transparent-stroke-plugin"
       ]
     },
     "2026-08-04": {
       "count": 68,
       "tools": [
+        "MangaReader_Project",
         "career-intelligence-platform",
-        "Train UI",
-        "MangaReader_Project"
+        "Train UI"
       ]
     },
     "2025-01-07": {
       "count": 18,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2020-08-02": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-08-21": {
       "count": 6,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2020-02-23": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2019-10-29": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2019-10-27": {
       "count": 51,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2020-12-07": {
       "count": 36,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2023-03-10": {
       "count": 6,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2020-12-10": {
       "count": 6,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2020-12-15": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2020-12-13": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2026-01-07": {
       "count": 27,
       "tools": [
-        "Train UI",
+        "MangaReader_Project",
         "Old figma MCP",
-        "MangaReader_Project"
+        "Train UI"
       ]
     },
     "2026-04-14": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2025-12-29": {
       "count": 6,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-02-28": {
       "count": 6,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2021-10-19": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2023-02-16": {
       "count": 27,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-10-25": {
       "count": 6,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-03-07": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2019-05-03": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2017-11-27": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2022-01-17": {
       "count": 9,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2016-10-15": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2019-08-21": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2023-06-11": {
       "count": 12,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2018-10-31": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-02-21": {
       "count": 21,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2022-03-08": {
       "count": 18,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2021-01-04": {
       "count": 6,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-05-22": {
       "count": 132,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-07-24": {
       "count": 6,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2021-12-14": {
       "count": 9,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-05-17": {
       "count": 132,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-05-24": {
       "count": 12,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2022-06-17": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-06-15": {
       "count": 12,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2025-02-04": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2023-09-02": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2026-01-23": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2025-12-20": {
       "count": 9,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-08-27": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-07-07": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2025-06-23": {
       "count": 12,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2026-01-31": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2023-09-06": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2025-01-06": {
       "count": 12,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-10-12": {
       "count": 9,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2025-03-29": {
       "count": 15,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-08-08": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-06-06": {
       "count": 9,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-12-18": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2023-05-06": {
       "count": 12,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2026-02-09": {
       "count": 6,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-08-26": {
       "count": 6,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-12-27": {
       "count": 12,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-11-10": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-10-21": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-09-09": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2023-06-24": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2022-02-01": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-11-18": {
       "count": 9,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2023-01-28": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2021-02-13": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2023-12-07": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2021-10-11": {
       "count": 6,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2022-04-12": {
       "count": 12,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2026-03-24": {
       "count": 9,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-11-17": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2021-04-28": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2020-05-14": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2022-03-18": {
       "count": 9,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-09-11": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2022-08-14": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-10-02": {
       "count": 6,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-02-07": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-12-08": {
       "count": 6,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2025-12-28": {
       "count": 6,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2023-03-31": {
       "count": 6,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2025-06-25": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2021-04-24": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-02-10": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-10-20": {
       "count": 9,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2023-03-30": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-11-27": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2025-02-09": {
       "count": 6,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-10-04": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2025-03-24": {
       "count": 6,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-06-08": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2023-08-12": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2021-03-14": {
       "count": 6,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2022-03-20": {
       "count": 6,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2025-04-29": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-05-23": {
       "count": 12,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2025-04-06": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2020-05-04": {
       "count": 9,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2021-06-30": {
       "count": 6,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-11-30": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2026-01-04": {
       "count": 9,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2023-10-03": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-03-01": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-11-07": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2025-04-25": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2021-02-04": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2022-07-22": {
       "count": 6,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2025-03-17": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-09-02": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2023-03-20": {
       "count": 6,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-08-25": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-09-14": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2021-02-12": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2025-04-05": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-08-23": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-09-20": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2022-09-22": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-01-15": {
       "count": 6,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2025-04-07": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-06-14": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-06-05": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2022-01-25": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2023-04-10": {
       "count": 6,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2023-11-08": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2020-12-14": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2022-03-14": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-10-01": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2023-04-04": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2025-08-06": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2025-01-10": {
       "count": 6,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2026-02-16": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2026-02-17": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2025-05-30": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-10-06": {
       "count": 6,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2021-06-16": {
       "count": 9,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2026-06-04": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2021-06-01": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-06-19": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2023-04-03": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2025-02-08": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-08-10": {
       "count": 6,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2023-04-20": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2021-03-24": {
       "count": 6,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2021-06-28": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2025-06-10": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2025-03-04": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-12-19": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2022-03-26": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2023-08-08": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-09-24": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2021-01-18": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-05-15": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2023-06-27": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2021-01-20": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-12-01": {
       "count": 6,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2023-06-07": {
       "count": 6,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-10-05": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2025-04-19": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2025-11-07": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-06-07": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2020-02-24": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-02-29": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2020-03-27": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2025-02-22": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-10-14": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2021-04-30": {
       "count": 6,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-12-25": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-08-16": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-08-22": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2025-05-23": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-08-02": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2023-09-12": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2022-06-02": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2020-06-14": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2022-04-04": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2022-04-02": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2020-05-12": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-09-10": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2024-02-09": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2023-08-31": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2020-07-14": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2023-11-06": {
       "count": 3,
       "tools": [
-        "Train UI",
-        "MangaReader_Project"
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2026-10-16": {
@@ -1965,15 +1970,15 @@ const heatmapData = {
     "2026-07-10": {
       "count": 118,
       "tools": [
-        "Train UI",
-        "pdf-teleprompter"
+        "pdf-teleprompter",
+        "Train UI"
       ]
     },
     "2026-07-25": {
       "count": 32,
       "tools": [
-        "Train UI",
-        "pdf-teleprompter"
+        "pdf-teleprompter",
+        "Train UI"
       ]
     },
     "2026-07-30": {
@@ -2049,6 +2054,12 @@ const heatmapData = {
         "Snap"
       ]
     },
+    "2026-10-21": {
+      "count": 7,
+      "tools": [
+        "vlc_gesture"
+      ]
+    },
     "2026-08-06": {
       "count": 1,
       "tools": [
@@ -2064,28 +2075,28 @@ const heatmapData = {
     "2026-09-19": {
       "count": 298,
       "tools": [
-        "Train UI",
         "design-system",
-        "temp-v0",
-        "design-systems"
+        "design-systems",
+        "Train UI",
+        "temp-v0"
       ]
     },
     "2026-09-14": {
       "count": 981,
       "tools": [
-        "Train UI",
-        "shadcn-real",
         "design-system",
         "test-validation",
-        "design-systems"
+        "shadcn-real",
+        "design-systems",
+        "Train UI"
       ]
     },
     "2026-09-16": {
       "count": 781,
       "tools": [
-        "Train UI",
         "design-system",
-        "design-systems"
+        "design-systems",
+        "Train UI"
       ]
     },
     "2026-03-31": {
@@ -2097,8 +2108,8 @@ const heatmapData = {
     "2026-08-27": {
       "count": 149,
       "tools": [
-        "visual-css-editor",
-        "my-website"
+        "my-website",
+        "visual-css-editor"
       ]
     },
     "2026-09-10": {
@@ -2120,8 +2131,8 @@ const heatmapData = {
       ]
     }
   },
-  "totalLastYear": 29475,
+  "totalLastYear": 29479,
   "totalTools": 95,
   "productionRate": 7.9,
-  "lastUpdated": "2026-10-22T17:42:47.334975"
+  "lastUpdated": "2026-10-24T23:33:35.003268"
 };
