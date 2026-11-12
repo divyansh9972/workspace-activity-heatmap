@@ -434,7 +434,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify(payload)
-            }).then(res => res.text()).then(msg => {
+            }).then(async res => {
+                const msg = await res.text();
+                if (!res.ok) throw new Error(msg || "Update failed");
+                return msg;
+            }).then(() => {
                 saveBtn.disabled = false;
                 saveBtn.textContent = "Save & Update Framer";
                 saveStatus.textContent = "Success! Framer will reflect changes in ~60 seconds.";
@@ -442,7 +446,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 saveBtn.disabled = false;
                 saveBtn.textContent = "Save & Update Framer";
                 saveStatus.style.color = "red";
-                saveStatus.textContent = "Error: You must run Settings.bat to use the Save button.";
+                saveStatus.textContent = err && err.message && err.message.startsWith("Update failed")
+                    ? err.message
+                    : "Error: You must run Settings.bat to use the Save button.";
             });
         });
     }
