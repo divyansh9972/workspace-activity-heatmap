@@ -1,5 +1,43 @@
 document.addEventListener("DOMContentLoaded", () => {
     const urlParams = new URLSearchParams(window.location.search);
+
+    // Support hiding native cursor for Framer custom cursors (?cursor=none or ?custom_cursor=1)
+    const cursorParam = urlParams.get('cursor');
+    if (cursorParam === 'none' || cursorParam === 'custom' || urlParams.get('custom_cursor') === '1') {
+        document.documentElement.classList.add('hide-cursor');
+        document.body.classList.add('hide-cursor');
+    }
+
+    // Bridge iframe mouse/pointer events to parent window so Framer custom cursors track smoothly
+    if (window.parent && window.parent !== window) {
+        const forwardMouseEvent = (type, e) => {
+            try {
+                window.parent.postMessage({
+                    type: type,
+                    source: 'workspace-activity-heatmap',
+                    x: e.clientX,
+                    y: e.clientY,
+                    clientX: e.clientX,
+                    clientY: e.clientY,
+                    pageX: e.pageX,
+                    pageY: e.pageY,
+                    screenX: e.screenX,
+                    screenY: e.screenY,
+                    movementX: e.movementX || 0,
+                    movementY: e.movementY || 0,
+                    buttons: e.buttons || 0,
+                }, '*');
+            } catch (_) {}
+        };
+
+        window.addEventListener('mousemove', (e) => forwardMouseEvent('mousemove', e), { passive: true });
+        window.addEventListener('pointermove', (e) => forwardMouseEvent('pointermove', e), { passive: true });
+        window.addEventListener('mouseenter', (e) => forwardMouseEvent('mouseenter', e), { passive: true });
+        window.addEventListener('mouseleave', (e) => forwardMouseEvent('mouseleave', e), { passive: true });
+        window.addEventListener('mousedown', (e) => forwardMouseEvent('mousedown', e), { passive: true });
+        window.addEventListener('mouseup', (e) => forwardMouseEvent('mouseup', e), { passive: true });
+    }
+
     // Apply local mode immediately so layout measurements reflect the final container width
     const isEmbedPreview = urlParams.get('embed') === '1';
     const isLocalhost = !isEmbedPreview && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:');
