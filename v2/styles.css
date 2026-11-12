@@ -86,7 +86,7 @@ body {
 }
 
 body:not(.local-mode) {
-    padding: 1px 1px 3px 1px; /* Minimal space so card border/shadow never clips */
+    padding: 4px 5px 6px 5px; /* Enough clearance so card box-shadow never clips at iframe edges */
 }
 
 body:not(.local-mode) #ui-controls,
@@ -314,13 +314,45 @@ body.dark .sun-icon {
     visibility: hidden;
 }
 
-.grid-scroll {
+.grid-column {
     flex: 1;
     min-width: 0;
     display: flex;
     flex-direction: column;
+}
+
+.grid-scroll {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
     overflow-x: auto;
     overflow-y: hidden;
+}
+
+.scroll-indicator {
+    margin-top: 8px;
+    height: 4px;
+    width: 100%;
+    border-radius: 999px;
+    background-color: var(--muted);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    touch-action: none;
+}
+
+.scroll-indicator-thumb {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    border-radius: 999px;
+    background-color: color-mix(in oklch, var(--muted-foreground) 45%, transparent);
+    transition: background-color 0.15s;
+}
+
+.scroll-indicator:hover .scroll-indicator-thumb {
+    background-color: color-mix(in oklch, var(--muted-foreground) 65%, transparent);
 }
 
 .months {
@@ -464,8 +496,9 @@ body.dark .sun-icon {
         padding: 14px 14px 12px 14px;
     }
     .heatmap-header {
-        flex-wrap: wrap;
-        gap: 2px 12px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2px;
         margin-bottom: 10px;
     }
     .heatmap-footer {

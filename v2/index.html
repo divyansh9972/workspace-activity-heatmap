@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Workspace Activity Heatmap</title>
-    <link rel="stylesheet" href="styles.css?v=3">
+    <link rel="stylesheet" href="styles.css?v=4">
 </head>
 <body>
     <div class="app-container">
@@ -55,12 +55,17 @@
                 <div class="weekday-label weekday-hidden">Sat</div>
             </div>
             
-            <div class="grid-scroll" id="grid-scroll">
-                <div class="months" id="months-container">
-                    <!-- Months dynamically added -->
+            <div class="grid-column">
+                <div class="grid-scroll" id="grid-scroll">
+                    <div class="months" id="months-container">
+                        <!-- Months dynamically added -->
+                    </div>
+                    <div class="grid" id="heatmap-grid">
+                        <!-- Days dynamically added -->
+                    </div>
                 </div>
-                <div class="grid" id="heatmap-grid">
-                    <!-- Days dynamically added -->
+                <div class="scroll-indicator hidden" id="scroll-indicator" aria-hidden="true">
+                    <div class="scroll-indicator-thumb" id="scroll-indicator-thumb"></div>
                 </div>
             </div>
         </div>
@@ -86,7 +91,7 @@
     <div id="tooltip" class="tooltip hidden"></div>
 
     <!-- Data and Script -->
-    <script src="activity-data.js?v=3"></script>
-    <script src="script.js?v=3"></script>
+    <script src="activity-data.js?v=4"></script>
+    <script src="script.js?v=4"></script>
 </body>
 </html>

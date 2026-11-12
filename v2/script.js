@@ -15,6 +15,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const grid = document.getElementById("heatmap-grid");
     const gridScroll = document.getElementById("grid-scroll");
+    const scrollIndicator = document.getElementById("scroll-indicator");
+    const scrollThumb = document.getElementById("scroll-indicator-thumb");
     const monthsContainer = document.getElementById("months-container");
     const contributionCount = document.getElementById("contribution-count");
     const productionRate = document.getElementById("production-rate");
@@ -294,6 +296,22 @@ document.addEventListener("DOMContentLoaded", () => {
     let lastAvailableWidth = -1;
     let resizeRafId = null;
 
+    function updateScrollIndicator() {
+        if (!scrollIndicator || !scrollThumb || !gridScroll) return;
+        const maxScroll = gridScroll.scrollWidth - gridScroll.clientWidth;
+        if (maxScroll <= 1) {
+            scrollIndicator.classList.add("hidden");
+            return;
+        }
+        scrollIndicator.classList.remove("hidden");
+        const visibleRatio = gridScroll.clientWidth / gridScroll.scrollWidth;
+        const thumbWidthPct = Math.max(15, Math.min(100, visibleRatio * 100));
+        const scrollProgress = Math.max(0, Math.min(1, gridScroll.scrollLeft / maxScroll));
+        const thumbLeftPct = scrollProgress * (100 - thumbWidthPct);
+        scrollThumb.style.width = `${thumbWidthPct}%`;
+        scrollThumb.style.left = `${thumbLeftPct}%`;
+    }
+
     function updateGridLayout(force = false) {
         if (!gridScroll || totalWeeks <= 0) return;
 
@@ -339,6 +357,8 @@ document.addEventListener("DOMContentLoaded", () => {
             gridScroll.scrollLeft = 0;
         }
 
+        updateScrollIndicator();
+
         if (!isLocalhost && heatmapWrapper && window.parent !== window) {
             window.parent.postMessage({
                 type: 'heatmap-resize',
@@ -351,7 +371,31 @@ document.addEventListener("DOMContentLoaded", () => {
     if (gridScroll) {
         gridScroll.addEventListener("scroll", () => {
             tooltip.classList.add("hidden");
+            updateScrollIndicator();
         }, { passive: true });
+
+        if (scrollIndicator) {
+            let isDraggingIndicator = false;
+            const scrollFromPointer = (clientX) => {
+                const rect = scrollIndicator.getBoundingClientRect();
+                if (rect.width <= 0) return;
+                const maxScroll = gridScroll.scrollWidth - gridScroll.clientWidth;
+                if (maxScroll <= 0) return;
+                const ratio = Math.max(0, Math.min(1, (clientX - rect.left) / rect.width));
+                gridScroll.scrollLeft = ratio * maxScroll;
+            };
+            scrollIndicator.addEventListener("pointerdown", (e) => {
+                isDraggingIndicator = true;
+                scrollIndicator.setPointerCapture(e.pointerId);
+                scrollFromPointer(e.clientX);
+            });
+            scrollIndicator.addEventListener("pointermove", (e) => {
+                if (isDraggingIndicator) scrollFromPointer(e.clientX);
+            });
+            const stopDrag = () => { isDraggingIndicator = false; };
+            scrollIndicator.addEventListener("pointerup", stopDrag);
+            scrollIndicator.addEventListener("pointercancel", stopDrag);
+        }
 
         if (typeof ResizeObserver !== 'undefined') {
             const resizeObserver = new ResizeObserver(() => {
