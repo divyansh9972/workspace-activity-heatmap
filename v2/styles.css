@@ -99,7 +99,7 @@ body:not(.local-mode) #save-status {
     display: flex;
     flex-direction: column;
     gap: 16px;
-    width: 100%;
+    width: fit-content;
     max-width: 100%;
     margin: 0 auto;
 }
@@ -263,10 +263,11 @@ body.dark .sun-icon {
     color: var(--card-foreground);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    padding: 18px 20px 16px 20px;
+    padding: 24px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    width: 100%;
+    width: fit-content;
     max-width: 100%;
+    margin: 0 auto;
     overflow: hidden;
 }
 
@@ -398,7 +399,7 @@ body.dark .sun-icon {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 12px;
+    margin-top: 16px;
     font-size: var(--text-xs);
     color: var(--muted-foreground);
 }
@@ -494,18 +495,19 @@ body.dark .sun-icon {
         margin-bottom: 8px;
     }
     .heatmap-container {
-        padding: 14px 14px 12px 14px;
+        width: 100%;
+        padding: 16px;
     }
     .heatmap-header {
         flex-direction: column;
         align-items: flex-start;
-        gap: 2px;
-        margin-bottom: 10px;
+        gap: 4px;
+        margin-bottom: 12px;
     }
     .heatmap-footer {
         flex-wrap: wrap-reverse;
         justify-content: space-between;
-        margin-top: 10px;
+        margin-top: 14px;
         gap: 8px;
     }
     .heatmap-hidden .last-updated {

@@ -133,9 +133,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 'const' in global scope does not attach to 'window', so we reference it directly
     let activeData = typeof heatmapData !== 'undefined' ? heatmapData : { contributions: {}, totalLastYear: 0, totalTools: 0, productionRate: 0, lastUpdated: null };
-    const MIN_CELL_SIZE = 11;
-    const MIN_CELL_GAP = 3;
-    const MAX_CELL_SIZE = 24;
+    const CELL_SIZE = 11;
+    const CELL_GAP = 3;
+    const COL_WIDTH = CELL_SIZE + CELL_GAP;
     const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
     let totalWeeks = 0;
@@ -319,36 +319,20 @@ document.addEventListener("DOMContentLoaded", () => {
         scrollThumb.style.left = `${thumbLeftPct}%`;
     }
 
-    function updateGridLayout(force = false) {
+    function updateGridLayout() {
         if (!gridScroll || totalWeeks <= 0) return;
 
-        const availableWidth = gridScroll.clientWidth;
-        if (availableWidth <= 0) return;
-        if (!force && availableWidth === lastAvailableWidth) return;
-        lastAvailableWidth = availableWidth;
+        const totalGridWidth = totalWeeks * COL_WIDTH - CELL_GAP;
 
-        const minGridWidth = totalWeeks * (MIN_CELL_SIZE + MIN_CELL_GAP) - MIN_CELL_GAP;
-        let cellSize = MIN_CELL_SIZE;
-        let cellGap = MIN_CELL_GAP;
-
-        // Fill container width cleanly on desktop/wide viewports; keep minimum readable size + horizontal scroll on phone
-        if (availableWidth > minGridWidth) {
-            cellGap = Math.max(MIN_CELL_GAP, Math.min(5, Math.round(availableWidth / (totalWeeks * 4.5))));
-            cellSize = Math.min(MAX_CELL_SIZE, (availableWidth - (totalWeeks - 1) * cellGap) / totalWeeks);
-        }
-
-        const colWidth = cellSize + cellGap;
-        const totalGridWidth = totalWeeks * colWidth - cellGap;
-
-        document.documentElement.style.setProperty('--cell-size', `${cellSize}px`);
-        document.documentElement.style.setProperty('--cell-gap', `${cellGap}px`);
+        document.documentElement.style.setProperty('--cell-size', `${CELL_SIZE}px`);
+        document.documentElement.style.setProperty('--cell-gap', `${CELL_GAP}px`);
 
         monthsContainer.style.width = `${totalGridWidth}px`;
         monthLabels.forEach((item, idx) => {
             const nextWeek = idx + 1 < monthLabels.length ? monthLabels[idx + 1].week : totalWeeks;
             const centerWeek = (item.week + nextWeek) / 2;
             const halfLabel = item.el.offsetWidth / 2;
-            const rawLeft = centerWeek * colWidth - cellGap / 2;
+            const rawLeft = centerWeek * COL_WIDTH - CELL_GAP / 2;
             const clampedLeft = Math.max(halfLabel, Math.min(totalGridWidth - halfLabel, rawLeft));
             item.el.style.left = `${clampedLeft}px`;
         });
