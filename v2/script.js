@@ -132,169 +132,176 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // 'const' in global scope does not attach to 'window', so we reference it directly
-    const data = typeof heatmapData !== 'undefined' ? heatmapData : { contributions: {}, totalLastYear: 0, totalTools: 0, productionRate: 0, lastUpdated: null };
-    const currentYearForHeader = new Date().getFullYear();
-    contributionCount.textContent = `${(data.totalTools || 0).toLocaleString()} Tools Built in ${currentYearForHeader}`;
-    if (productionRate) {
-        productionRate.textContent = `~${data.productionRate || 0} / month`;
-    }
-    
-    // Relative Time Logic for "Last Updated"
-    const lastUpdatedEl = document.getElementById("last-updated");
-    if (lastUpdatedEl && data.lastUpdated) {
-        const updatedTime = new Date(data.lastUpdated);
-        const now = new Date();
-        const diffMs = now - updatedTime;
-        const diffMins = Math.floor(diffMs / 60000);
-        const diffHours = Math.floor(diffMins / 60);
-        const diffDays = Math.floor(diffHours / 24);
-
-        let timeStr = "just now";
-        if (diffDays > 0) {
-            timeStr = `${diffDays} day${diffDays > 1 ? 's' : ''} ago`;
-        } else if (diffHours > 0) {
-            timeStr = `${diffHours} hour${diffHours > 1 ? 's' : ''} ago`;
-        } else if (diffMins > 0) {
-            timeStr = `${diffMins} min${diffMins > 1 ? 's' : ''} ago`;
-        }
-        lastUpdatedEl.textContent = `Updated ${timeStr}`;
-    }
-
-    // Calculate dates for current year up to today (no future blank cells)
-    const now = new Date();
-    const currentYear = now.getFullYear();
-    const currentMonthIdx = now.getMonth();
-    const todayDateNum = now.getDate();
-    const startDate = new Date(currentYear, 0, 1); // Jan 1st
-    const endDate = new Date(currentYear, currentMonthIdx, todayDateNum); // Today
-    
-    // Find the Sunday before or on Jan 1st
-    const startDayOfWeek = startDate.getDay();
-    const calendarStart = new Date(startDate);
-    calendarStart.setDate(startDate.getDate() - startDayOfWeek);
-
+    let activeData = typeof heatmapData !== 'undefined' ? heatmapData : { contributions: {}, totalLastYear: 0, totalTools: 0, productionRate: 0, lastUpdated: null };
     const MIN_CELL_SIZE = 11;
     const MIN_CELL_GAP = 3;
     const MAX_CELL_SIZE = 24;
-
-    let currentDate = new Date(calendarStart);
-    let currentWeek = 0;
-    const monthLabels = [];
-    
     const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
-    while (currentDate <= endDate) {
-        const cell = document.createElement("div");
-        cell.className = "cell";
-        
-        const dateStr = [
-            currentDate.getFullYear(),
-            String(currentDate.getMonth() + 1).padStart(2, '0'),
-            String(currentDate.getDate()).padStart(2, '0')
-        ].join('-');
-
-        const dailyData = data.contributions[dateStr];
-        const count = dailyData ? dailyData.count : 0;
-        
-        let level = 0;
-        if (count >= 1 && count <= 2) level = 1;
-        else if (count >= 3 && count <= 10) level = 2;
-        else if (count >= 11 && count <= 25) level = 3;
-        else if (count >= 26) level = 4;
-
-        cell.classList.add(`level-${level}`);
-        
-        // Format for tooltip: "[Date], [Number of file changes], [Activity level]"
-        const displayDate = `${months[currentDate.getMonth()]} ${currentDate.getDate()}`;
-        
-        cell.addEventListener("mouseenter", () => {
-            const rect = cell.getBoundingClientRect();
-            
-            const format = currentTooltipFormat;
-            
-            let tooltipText = `${displayDate}`;
-            
-            if (count > 0) {
-                if (format === "detailed") {
-                    const isLevelHidden = heatmapWrapper && heatmapWrapper.classList.contains("heatmap-hidden");
-                    if (isLevelHidden) {
-                        tooltipText += `, ${count} file changes`;
-                    } else {
-                        tooltipText += `, ${count} file changes, Level ${level}`;
-                    }
-                } else if (format === "tools") {
-                    const tools = (data.contributions[dateStr] && data.contributions[dateStr].tools) || [];
-                    if (tools.length > 0) {
-                        tooltipText += `, Worked on: ${tools.join(", ")}`;
-                    } else {
-                        tooltipText += `, Active Day`;
-                    }
-                } else if (format === "simple") {
-                    tooltipText += `, Active Day`;
-                }
-            } else {
-                if (format === "detailed") {
-                    const isLevelHidden = heatmapWrapper && heatmapWrapper.classList.contains("heatmap-hidden");
-                    if (isLevelHidden) {
-                        tooltipText += `, 0 file changes`;
-                    } else {
-                        tooltipText += `, 0 file changes, Level 0`;
-                    }
-                } else {
-                    tooltipText += `, No activity`;
-                }
-            }
-            
-            tooltip.textContent = tooltipText;
-            
-            const centerX = rect.left + rect.width / 2;
-            tooltip.style.setProperty('--arrow-left', '50%');
-            tooltip.style.left = `${centerX}px`;
-            tooltip.style.top = `${rect.top}px`;
-            tooltip.classList.remove("hidden");
-
-            const tipRect = tooltip.getBoundingClientRect();
-            const pad = 8;
-            let shift = 0;
-            if (tipRect.left < pad) {
-                shift = pad - tipRect.left;
-            } else if (tipRect.right > window.innerWidth - pad) {
-                shift = (window.innerWidth - pad) - tipRect.right;
-            }
-            if (shift !== 0) {
-                tooltip.style.left = `${centerX + shift}px`;
-                tooltip.style.setProperty('--arrow-left', `calc(50% - ${shift}px)`);
-            }
-        });
-
-        cell.addEventListener("mouseleave", () => {
-            tooltip.classList.add("hidden");
-        });
-        
-        // Check if we need to render a month label (only for the current year to avoid duplicates at edges)
-        if (currentDate.getDate() === 1 && currentDate.getFullYear() === currentYear) {
-            const monthIdx = currentDate.getMonth();
-            const monthLabel = document.createElement("div");
-            monthLabel.className = "month-label";
-            monthLabel.textContent = months[monthIdx];
-            monthLabel.style.transform = "translateX(-50%)";
-            monthsContainer.appendChild(monthLabel);
-            monthLabels.push({ el: monthLabel, week: currentWeek });
-        }
-        
-        grid.appendChild(cell);
-
-        // Move to next day
-        currentDate.setDate(currentDate.getDate() + 1);
-        if (currentDate.getDay() === 0) {
-            currentWeek++;
-        }
-    }
-
-    const totalWeeks = currentDate.getDay() === 0 ? currentWeek : currentWeek + 1;
+    let totalWeeks = 0;
+    let monthLabels = [];
     let hasAutoScrolled = false;
     let lastAvailableWidth = -1;
     let resizeRafId = null;
+
+    function renderHeatmap(data) {
+        activeData = data || { contributions: {}, totalLastYear: 0, totalTools: 0, productionRate: 0, lastUpdated: null };
+        const currentYearForHeader = new Date().getFullYear();
+        contributionCount.textContent = `${(activeData.totalTools || 0).toLocaleString()} Tools Built in ${currentYearForHeader}`;
+        if (productionRate) {
+            productionRate.textContent = `~${activeData.productionRate || 0} / month`;
+        }
+
+        // Relative Time Logic for "Last Updated"
+        const lastUpdatedEl = document.getElementById("last-updated");
+        if (lastUpdatedEl && activeData.lastUpdated) {
+            const updatedTime = new Date(activeData.lastUpdated);
+            const now = new Date();
+            const diffMs = now - updatedTime;
+            const diffMins = Math.floor(diffMs / 60000);
+            const diffHours = Math.floor(diffMins / 60);
+            const diffDays = Math.floor(diffHours / 24);
+
+            let timeStr = "just now";
+            if (diffDays > 0) {
+                timeStr = `${diffDays} day${diffDays > 1 ? 's' : ''} ago`;
+            } else if (diffHours > 0) {
+                timeStr = `${diffHours} hour${diffHours > 1 ? 's' : ''} ago`;
+            } else if (diffMins > 0) {
+                timeStr = `${diffMins} min${diffMins > 1 ? 's' : ''} ago`;
+            }
+            lastUpdatedEl.textContent = `Updated ${timeStr}`;
+        }
+
+        grid.innerHTML = "";
+        monthsContainer.innerHTML = "";
+        monthLabels = [];
+        hasAutoScrolled = false;
+
+        // Calculate dates for current year up to today (no future blank cells)
+        const now = new Date();
+        const currentYear = now.getFullYear();
+        const currentMonthIdx = now.getMonth();
+        const todayDateNum = now.getDate();
+        const startDate = new Date(currentYear, 0, 1); // Jan 1st
+        const endDate = new Date(currentYear, currentMonthIdx, todayDateNum); // Today
+
+        // Find the Sunday before or on Jan 1st
+        const startDayOfWeek = startDate.getDay();
+        const calendarStart = new Date(startDate);
+        calendarStart.setDate(startDate.getDate() - startDayOfWeek);
+
+        let currentDate = new Date(calendarStart);
+        let currentWeek = 0;
+
+        while (currentDate <= endDate) {
+            const cell = document.createElement("div");
+            cell.className = "cell";
+
+            const dateStr = [
+                currentDate.getFullYear(),
+                String(currentDate.getMonth() + 1).padStart(2, '0'),
+                String(currentDate.getDate()).padStart(2, '0')
+            ].join('-');
+
+            const dailyData = activeData.contributions[dateStr];
+            const count = dailyData ? dailyData.count : 0;
+
+            let level = 0;
+            if (count >= 1 && count <= 2) level = 1;
+            else if (count >= 3 && count <= 10) level = 2;
+            else if (count >= 11 && count <= 25) level = 3;
+            else if (count >= 26) level = 4;
+
+            cell.classList.add(`level-${level}`);
+
+            const displayDate = `${months[currentDate.getMonth()]} ${currentDate.getDate()}`;
+
+            cell.addEventListener("mouseenter", () => {
+                const rect = cell.getBoundingClientRect();
+                const format = currentTooltipFormat;
+                let tooltipText = `${displayDate}`;
+
+                if (count > 0) {
+                    if (format === "detailed") {
+                        const isLevelHidden = heatmapWrapper && heatmapWrapper.classList.contains("heatmap-hidden");
+                        if (isLevelHidden) {
+                            tooltipText += `, ${count} file changes`;
+                        } else {
+                            tooltipText += `, ${count} file changes, Level ${level}`;
+                        }
+                    } else if (format === "tools") {
+                        const tools = (activeData.contributions[dateStr] && activeData.contributions[dateStr].tools) || [];
+                        if (tools.length > 0) {
+                            tooltipText += `, Worked on: ${tools.join(", ")}`;
+                        } else {
+                            tooltipText += `, Active Day`;
+                        }
+                    } else if (format === "simple") {
+                        tooltipText += `, Active Day`;
+                    }
+                } else {
+                    if (format === "detailed") {
+                        const isLevelHidden = heatmapWrapper && heatmapWrapper.classList.contains("heatmap-hidden");
+                        if (isLevelHidden) {
+                            tooltipText += `, 0 file changes`;
+                        } else {
+                            tooltipText += `, 0 file changes, Level 0`;
+                        }
+                    } else {
+                        tooltipText += `, No activity`;
+                    }
+                }
+
+                tooltip.textContent = tooltipText;
+
+                const centerX = rect.left + rect.width / 2;
+                tooltip.style.setProperty('--arrow-left', '50%');
+                tooltip.style.left = `${centerX}px`;
+                tooltip.style.top = `${rect.top}px`;
+                tooltip.classList.remove("hidden");
+
+                const tipRect = tooltip.getBoundingClientRect();
+                const pad = 8;
+                let shift = 0;
+                if (tipRect.left < pad) {
+                    shift = pad - tipRect.left;
+                } else if (tipRect.right > window.innerWidth - pad) {
+                    shift = (window.innerWidth - pad) - tipRect.right;
+                }
+                if (shift !== 0) {
+                    tooltip.style.left = `${centerX + shift}px`;
+                    tooltip.style.setProperty('--arrow-left', `calc(50% - ${shift}px)`);
+                }
+            });
+
+            cell.addEventListener("mouseleave", () => {
+                tooltip.classList.add("hidden");
+            });
+
+            // Check if we need to render a month label (only for the current year to avoid duplicates at edges)
+            if (currentDate.getDate() === 1 && currentDate.getFullYear() === currentYear) {
+                const monthIdx = currentDate.getMonth();
+                const monthLabel = document.createElement("div");
+                monthLabel.className = "month-label";
+                monthLabel.textContent = months[monthIdx];
+                monthLabel.style.transform = "translateX(-50%)";
+                monthsContainer.appendChild(monthLabel);
+                monthLabels.push({ el: monthLabel, week: currentWeek });
+            }
+
+            grid.appendChild(cell);
+
+            // Move to next day
+            currentDate.setDate(currentDate.getDate() + 1);
+            if (currentDate.getDay() === 0) {
+                currentWeek++;
+            }
+        }
+
+        totalWeeks = currentDate.getDay() === 0 ? currentWeek : currentWeek + 1;
+        updateGridLayout(true);
+    }
 
     function updateScrollIndicator() {
         if (!scrollIndicator || !scrollThumb || !gridScroll) return;
@@ -408,7 +415,173 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    updateGridLayout(true);
+    renderHeatmap(activeData);
+
+    // Local Scan Folders Manager (only active when served via Settings.bat / server.py)
+    const toggleFoldersBtn = document.getElementById("toggle-folders");
+    const foldersCountEl = document.getElementById("folders-count");
+    const foldersPanel = document.getElementById("folders-panel");
+    const foldersListEl = document.getElementById("folders-list");
+    const folderPathInput = document.getElementById("folder-path-input");
+    const browseFolderBtn = document.getElementById("browse-folder-btn");
+    const addFolderBtn = document.getElementById("add-folder-btn");
+    const rescanFoldersBtn = document.getElementById("rescan-folders-btn");
+    const foldersErrorEl = document.getElementById("folders-error");
+
+    function showFoldersError(msg) {
+        if (!foldersErrorEl) return;
+        if (!msg) {
+            foldersErrorEl.textContent = "";
+            foldersErrorEl.classList.add("hidden");
+        } else {
+            foldersErrorEl.textContent = msg;
+            foldersErrorEl.classList.remove("hidden");
+        }
+    }
+
+    function renderFoldersList(dirs) {
+        if (!foldersListEl) return;
+        const list = Array.isArray(dirs) ? dirs : [];
+        if (foldersCountEl) {
+            foldersCountEl.textContent = String(list.length);
+        }
+        foldersListEl.innerHTML = "";
+
+        if (list.length === 0) {
+            const empty = document.createElement("div");
+            empty.className = "folders-empty";
+            empty.textContent = "No folders configured. Add a workspace folder below to scan tools.";
+            foldersListEl.appendChild(empty);
+            return;
+        }
+
+        list.forEach((item) => {
+            const row = document.createElement("div");
+            row.className = "folder-row";
+
+            const info = document.createElement("div");
+            info.className = "folder-info";
+
+            const pathSpan = document.createElement("span");
+            pathSpan.className = "folder-path";
+            pathSpan.textContent = item.path;
+            pathSpan.title = item.path;
+
+            const badge = document.createElement("span");
+            badge.className = item.exists ? "folder-badge" : "folder-badge missing";
+            badge.textContent = item.exists
+                ? `${item.toolCount} tool${item.toolCount === 1 ? "" : "s"}`
+                : "Not found";
+
+            info.appendChild(pathSpan);
+            info.appendChild(badge);
+
+            const removeBtn = document.createElement("button");
+            removeBtn.type = "button";
+            removeBtn.className = "toggle-button folder-remove-btn";
+            removeBtn.textContent = "Remove";
+            removeBtn.addEventListener("click", () => updateScanDirs({ action: "remove", path: item.path }));
+
+            row.appendChild(info);
+            row.appendChild(removeBtn);
+            foldersListEl.appendChild(row);
+        });
+    }
+
+    function setFoldersBusy(busy) {
+        if (addFolderBtn) addFolderBtn.disabled = busy;
+        if (browseFolderBtn) browseFolderBtn.disabled = busy;
+        if (rescanFoldersBtn) rescanFoldersBtn.disabled = busy;
+    }
+
+    async function updateScanDirs(payload) {
+        showFoldersError("");
+        setFoldersBusy(true);
+        try {
+            const res = await fetch('/scan-dirs', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+            const body = await res.json();
+            if (!res.ok) {
+                showFoldersError(body.error || "Could not update folders.");
+                return false;
+            }
+            renderFoldersList(body.dirs);
+            if (body.data) {
+                renderHeatmap(body.data);
+            }
+            return true;
+        } catch (err) {
+            showFoldersError("Error: Run Settings.bat to manage scan folders.");
+            return false;
+        } finally {
+            setFoldersBusy(false);
+        }
+    }
+
+    if (isLocalhost && window.location.protocol !== 'file:' && toggleFoldersBtn && foldersPanel) {
+        toggleFoldersBtn.addEventListener("click", () => {
+            foldersPanel.classList.toggle("hidden");
+            const expanded = !foldersPanel.classList.contains("hidden");
+            toggleFoldersBtn.setAttribute("aria-expanded", String(expanded));
+        });
+
+        fetch('/scan-dirs')
+            .then(res => (res.ok ? res.json() : Promise.reject()))
+            .then(body => renderFoldersList(body.dirs))
+            .catch(() => {
+                if (toggleFoldersBtn) toggleFoldersBtn.style.display = "none";
+            });
+
+        if (addFolderBtn && folderPathInput) {
+            const handleAdd = async () => {
+                const raw = folderPathInput.value.trim();
+                if (!raw) {
+                    showFoldersError("Please enter or browse for a folder path.");
+                    return;
+                }
+                const ok = await updateScanDirs({ action: "add", path: raw });
+                if (ok) folderPathInput.value = "";
+            };
+            addFolderBtn.addEventListener("click", handleAdd);
+            folderPathInput.addEventListener("keydown", (e) => {
+                if (e.key === "Enter") {
+                    e.preventDefault();
+                    handleAdd();
+                }
+            });
+        }
+
+        if (browseFolderBtn) {
+            browseFolderBtn.addEventListener("click", async () => {
+                showFoldersError("");
+                setFoldersBusy(true);
+                try {
+                    const res = await fetch('/browse-folder', { method: 'POST' });
+                    const body = await res.json();
+                    if (!res.ok) {
+                        showFoldersError(body.error || "Could not open folder picker.");
+                        return;
+                    }
+                    if (body.path) {
+                        await updateScanDirs({ action: "add", path: body.path });
+                    }
+                } catch (err) {
+                    showFoldersError("Error: Run Settings.bat to browse folders.");
+                } finally {
+                    setFoldersBusy(false);
+                }
+            });
+        }
+
+        if (rescanFoldersBtn) {
+            rescanFoldersBtn.addEventListener("click", () => updateScanDirs({ action: "rescan" }));
+        }
+    } else if (toggleFoldersBtn) {
+        toggleFoldersBtn.style.display = "none";
+    }
 
     // Save & Update Framer button logic
     const saveBtn = document.getElementById("save-framer-btn");

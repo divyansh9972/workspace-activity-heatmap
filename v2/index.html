@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Workspace Activity Heatmap</title>
-    <link rel="stylesheet" href="styles.css?v=4">
+    <link rel="stylesheet" href="styles.css?v=5">
 </head>
 <body>
     <div class="app-container">
@@ -34,7 +34,24 @@
                 <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
             </button>
             <button id="toggle-heatmap" class="toggle-button">Show Levels</button>
+            <button id="toggle-folders" class="toggle-button" aria-expanded="false">Folders (<span id="folders-count">0</span>)</button>
             <button id="save-framer-btn" class="toggle-button" style="background-color: black; color: white; border-color: black; margin-left: auto;">Save & Update Framer</button>
+        </div>
+        <div id="folders-panel" class="folders-panel hidden">
+            <div class="folders-panel-header">
+                <div>
+                    <div class="folders-panel-title">Workspace Folders to Scan</div>
+                    <div class="folders-panel-subtitle">Each subfolder inside these folders counts as a tool.</div>
+                </div>
+                <button id="rescan-folders-btn" type="button" class="toggle-button folders-rescan-btn">Rescan</button>
+            </div>
+            <div id="folders-list" class="folders-list"></div>
+            <div class="folders-add-row">
+                <input id="folder-path-input" type="text" class="folder-input" placeholder="Paste folder path (e.g. D:\Projects)" />
+                <button id="browse-folder-btn" type="button" class="toggle-button">Browse...</button>
+                <button id="add-folder-btn" type="button" class="toggle-button folder-add-btn">Add Folder</button>
+            </div>
+            <div id="folders-error" class="folders-error hidden"></div>
         </div>
         <div id="save-status" style="display: none; color: #059669; font-size: 14px; text-align: right; margin-top: -8px;"></div>
         
@@ -91,7 +108,7 @@
     <div id="tooltip" class="tooltip hidden"></div>
 
     <!-- Data and Script -->
-    <script src="activity-data.js?v=4"></script>
-    <script src="script.js?v=4"></script>
+    <script src="activity-data.js?v=5"></script>
+    <script src="script.js?v=5"></script>
 </body>
 </html>
