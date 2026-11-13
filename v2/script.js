@@ -360,17 +360,36 @@ document.addEventListener("DOMContentLoaded", () => {
     function updateGridLayout() {
         if (!gridScroll || totalWeeks <= 0) return;
 
-        const totalGridWidth = totalWeeks * COL_WIDTH - CELL_GAP;
+        const availableWidth = gridScroll.clientWidth;
+        const baseGridWidth = totalWeeks * COL_WIDTH - CELL_GAP;
 
-        document.documentElement.style.setProperty('--cell-size', `${CELL_SIZE}px`);
-        document.documentElement.style.setProperty('--cell-gap', `${CELL_GAP}px`);
+        let currentCellSize = CELL_SIZE;
+        let currentCellGap = CELL_GAP;
+        let currentColWidth = COL_WIDTH;
+        let totalGridWidth = baseGridWidth;
 
+        if (availableWidth >= baseGridWidth) {
+            // Distribute across available width so the grid neatly fills the card to the right padding
+            const calculatedColWidth = availableWidth / totalWeeks;
+            const maxColWidth = 16.5; // caps cell size to ~13px
+            const boundedColWidth = Math.min(maxColWidth, calculatedColWidth);
+
+            currentColWidth = boundedColWidth;
+            currentCellSize = Math.max(11, Math.min(13, +(boundedColWidth * (11 / 14)).toFixed(2)));
+            currentCellGap = Math.max(3, +(boundedColWidth - currentCellSize).toFixed(2));
+            totalGridWidth = +(totalWeeks * currentColWidth - currentCellGap).toFixed(2);
+        }
+
+        document.documentElement.style.setProperty('--cell-size', `${currentCellSize}px`);
+        document.documentElement.style.setProperty('--cell-gap', `${currentCellGap}px`);
+
+        if (grid) grid.style.width = `${totalGridWidth}px`;
         monthsContainer.style.width = `${totalGridWidth}px`;
         monthLabels.forEach((item, idx) => {
             const nextWeek = idx + 1 < monthLabels.length ? monthLabels[idx + 1].week : totalWeeks;
             const centerWeek = (item.week + nextWeek) / 2;
             const halfLabel = item.el.offsetWidth / 2;
-            const rawLeft = centerWeek * COL_WIDTH - CELL_GAP / 2;
+            const rawLeft = centerWeek * currentColWidth - currentCellGap / 2;
             const clampedLeft = Math.max(halfLabel, Math.min(totalGridWidth - halfLabel, rawLeft));
             item.el.style.left = `${clampedLeft}px`;
         });
