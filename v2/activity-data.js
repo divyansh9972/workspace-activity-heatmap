@@ -12,17 +12,17 @@ const heatmapData = {
         "plugins"
       ]
     },
+    "2026-01-06": {
+      "count": 2,
+      "tools": [
+        "antigravity_particles"
+      ]
+    },
     "2026-01-05": {
       "count": 5327,
       "tools": [
         "antigravity_particles",
         "gesture_mouse_control"
-      ]
-    },
-    "2026-01-06": {
-      "count": 2,
-      "tools": [
-        "antigravity_particles"
       ]
     },
     "2026-01-09": {
@@ -265,19 +265,19 @@ const heatmapData = {
         "farmer-voice-agent"
       ]
     },
-    "2026-10-12": {
-      "count": 75,
-      "tools": [
-        "FieldTimeTrackerAndroid",
-        "field-time-tracker"
-      ]
-    },
     "2026-09-17": {
       "count": 230,
       "tools": [
         "Snap",
         "Train UI",
         "design-systems",
+        "field-time-tracker"
+      ]
+    },
+    "2026-10-12": {
+      "count": 75,
+      "tools": [
+        "FieldTimeTrackerAndroid",
         "field-time-tracker"
       ]
     },
@@ -667,13 +667,6 @@ const heatmapData = {
         "livekit-vercel-api"
       ]
     },
-    "2026-07-21": {
-      "count": 447,
-      "tools": [
-        "MangaReader_Project",
-        "Train UI"
-      ]
-    },
     "2026-07-09": {
       "count": 249,
       "tools": [
@@ -684,6 +677,13 @@ const heatmapData = {
         "canteen-pwa",
         "dil",
         "pdf-teleprompter"
+      ]
+    },
+    "2026-07-21": {
+      "count": 447,
+      "tools": [
+        "MangaReader_Project",
+        "Train UI"
       ]
     },
     "2026-07-22": {
@@ -1982,7 +1982,7 @@ const heatmapData = {
       ]
     },
     "2026-11-11": {
-      "count": 120,
+      "count": 105,
       "tools": [
         "android_app",
         "builds",
@@ -2093,7 +2093,7 @@ const heatmapData = {
       ]
     },
     "2026-11-12": {
-      "count": 40,
+      "count": 9,
       "tools": [
         "android_app",
         "builds",
@@ -2187,6 +2187,14 @@ const heatmapData = {
         "scripts"
       ]
     },
+    "2026-11-13": {
+      "count": 99,
+      "tools": [
+        "android_app",
+        "builds",
+        "docs"
+      ]
+    },
     "2026-11-05": {
       "count": 2851,
       "tools": [
@@ -2219,10 +2227,23 @@ const heatmapData = {
       "tools": [
         "plugins"
       ]
+    },
+    "2026-11-14": {
+      "count": 464,
+      "tools": [
+        "remote_blender_pipeline",
+        "remote_blender_pipeline_v2"
+      ]
+    },
+    "2026-11-15": {
+      "count": 26,
+      "tools": [
+        "remote_blender_pipeline_v2"
+      ]
     }
   },
-  "totalLastYear": 39453,
-  "totalTools": 113,
-  "productionRate": 9.4,
-  "lastUpdated": "2026-11-12T16:09:14.213936"
+  "totalLastYear": 39996,
+  "totalTools": 115,
+  "productionRate": 9.6,
+  "lastUpdated": "2026-11-15T12:18:03.807729"
 };
