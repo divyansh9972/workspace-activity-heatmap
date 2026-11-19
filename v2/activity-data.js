@@ -12,17 +12,17 @@ const heatmapData = {
         "plugins"
       ]
     },
-    "2026-01-06": {
-      "count": 2,
-      "tools": [
-        "antigravity_particles"
-      ]
-    },
     "2026-01-05": {
       "count": 5327,
       "tools": [
         "antigravity_particles",
         "gesture_mouse_control"
+      ]
+    },
+    "2026-01-06": {
+      "count": 2,
+      "tools": [
+        "antigravity_particles"
       ]
     },
     "2026-01-09": {
@@ -196,15 +196,15 @@ const heatmapData = {
         "drop-viewer"
       ]
     },
-    "2026-04-21": {
-      "count": 142,
+    "2026-05-01": {
+      "count": 101,
       "tools": [
         "EchoComment_Project",
         "Train UI"
       ]
     },
-    "2026-05-01": {
-      "count": 101,
+    "2026-04-21": {
+      "count": 142,
       "tools": [
         "EchoComment_Project",
         "Train UI"
@@ -265,19 +265,19 @@ const heatmapData = {
         "farmer-voice-agent"
       ]
     },
+    "2026-10-12": {
+      "count": 75,
+      "tools": [
+        "FieldTimeTrackerAndroid",
+        "field-time-tracker"
+      ]
+    },
     "2026-09-17": {
       "count": 230,
       "tools": [
         "Snap",
         "Train UI",
         "design-systems",
-        "field-time-tracker"
-      ]
-    },
-    "2026-10-12": {
-      "count": 75,
-      "tools": [
-        "FieldTimeTrackerAndroid",
         "field-time-tracker"
       ]
     },
@@ -516,17 +516,17 @@ const heatmapData = {
         "figma_text_style_generator"
       ]
     },
-    "2026-05-23": {
-      "count": 27,
-      "tools": [
-        "financial-strategy-engine"
-      ]
-    },
     "2026-05-21": {
       "count": 133,
       "tools": [
         "financial-strategy-engine",
         "html-to-figma"
+      ]
+    },
+    "2026-05-23": {
+      "count": 27,
+      "tools": [
+        "financial-strategy-engine"
       ]
     },
     "2026-05-28": {
@@ -600,10 +600,13 @@ const heatmapData = {
         "google-tasks-widget"
       ]
     },
-    "2026-10-26": {
-      "count": 7,
+    "2026-11-17": {
+      "count": 483,
       "tools": [
-        "hdfc-smart-eslip-flow"
+        "JMA_Remedies",
+        "hdfc-smart-eslip-flow",
+        "neet-exam-platform",
+        "remote_blender_pipeline_v2"
       ]
     },
     "2026-10-24": {
@@ -620,6 +623,12 @@ const heatmapData = {
     },
     "2026-10-19": {
       "count": 57,
+      "tools": [
+        "hdfc-smart-eslip-flow"
+      ]
+    },
+    "2026-10-26": {
+      "count": 5,
       "tools": [
         "hdfc-smart-eslip-flow"
       ]
@@ -686,19 +695,19 @@ const heatmapData = {
         "Train UI"
       ]
     },
+    "2026-08-30": {
+      "count": 462,
+      "tools": [
+        "MangaReader_Project",
+        "Train UI"
+      ]
+    },
     "2026-07-22": {
       "count": 35,
       "tools": [
         "MangaReader_Project",
         "Train UI",
         "transparent-stroke-plugin"
-      ]
-    },
-    "2026-08-30": {
-      "count": 462,
-      "tools": [
-        "MangaReader_Project",
-        "Train UI"
       ]
     },
     "2026-08-04": {
@@ -1981,22 +1990,22 @@ const heatmapData = {
         "neet-exam-platform"
       ]
     },
+    "2026-11-07": {
+      "count": 58,
+      "tools": [
+        "JMA_Remedies",
+        "neet-exam-platform",
+        "plugins"
+      ]
+    },
     "2026-11-11": {
-      "count": 105,
+      "count": 99,
       "tools": [
         "android_app",
         "builds",
         "docs",
         "neet-exam-platform",
         "scripts"
-      ]
-    },
-    "2026-11-07": {
-      "count": 59,
-      "tools": [
-        "neet-exam-platform",
-        "plugins",
-        "project_files"
       ]
     },
     "2026-01-11": {
@@ -2196,24 +2205,39 @@ const heatmapData = {
       ]
     },
     "2026-11-05": {
-      "count": 2851,
+      "count": 2863,
       "tools": [
         ".agents",
+        "JMA_Remedies",
         "plugins",
-        "project_files",
         "tools"
       ]
     },
-    "2026-11-06": {
-      "count": 386,
+    "2026-11-19": {
+      "count": 17,
       "tools": [
-        "Air_Cushion_Mask",
-        "Guedel_Airway",
-        "IV_Cannula",
-        "jma_remedies_scraped",
+        "JMA_Remedies"
+      ]
+    },
+    "2026-11-18": {
+      "count": 2,
+      "tools": [
+        "JMA_Remedies"
+      ]
+    },
+    "2026-11-06": {
+      "count": 451,
+      "tools": [
+        "JMA_Remedies",
         "plugins",
-        "project_files",
         "tools"
+      ]
+    },
+    "2026-11-16": {
+      "count": 133,
+      "tools": [
+        "JMA_Remedies",
+        "remote_blender_pipeline_v2"
       ]
     },
     "2026-11-04": {
@@ -2236,14 +2260,14 @@ const heatmapData = {
       ]
     },
     "2026-11-15": {
-      "count": 26,
+      "count": 25,
       "tools": [
         "remote_blender_pipeline_v2"
       ]
     }
   },
-  "totalLastYear": 39996,
-  "totalTools": 115,
-  "productionRate": 9.6,
-  "lastUpdated": "2026-11-15T12:18:03.807729"
+  "totalLastYear": 40698,
+  "totalTools": 111,
+  "productionRate": 9.2,
+  "lastUpdated": "2026-11-19T22:59:10.148070"
 };
