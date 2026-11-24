@@ -25,6 +25,20 @@ const heatmapData = {
         "antigravity_particles"
       ]
     },
+    "2026-11-23": {
+      "count": 167,
+      "tools": [
+        "applens-desktop",
+        "mobile-visual-review",
+        "pulse_neet_app"
+      ]
+    },
+    "2019-06-18": {
+      "count": 1,
+      "tools": [
+        "applens-desktop"
+      ]
+    },
     "2026-01-09": {
       "count": 26,
       "tools": [
@@ -265,19 +279,19 @@ const heatmapData = {
         "farmer-voice-agent"
       ]
     },
-    "2026-10-12": {
-      "count": 75,
-      "tools": [
-        "FieldTimeTrackerAndroid",
-        "field-time-tracker"
-      ]
-    },
     "2026-09-17": {
       "count": 230,
       "tools": [
         "Snap",
         "Train UI",
         "design-systems",
+        "field-time-tracker"
+      ]
+    },
+    "2026-10-12": {
+      "count": 75,
+      "tools": [
+        "FieldTimeTrackerAndroid",
         "field-time-tracker"
       ]
     },
@@ -676,6 +690,13 @@ const heatmapData = {
         "livekit-vercel-api"
       ]
     },
+    "2026-07-21": {
+      "count": 447,
+      "tools": [
+        "MangaReader_Project",
+        "Train UI"
+      ]
+    },
     "2026-07-09": {
       "count": 249,
       "tools": [
@@ -688,11 +709,12 @@ const heatmapData = {
         "pdf-teleprompter"
       ]
     },
-    "2026-07-21": {
-      "count": 447,
+    "2026-07-22": {
+      "count": 35,
       "tools": [
         "MangaReader_Project",
-        "Train UI"
+        "Train UI",
+        "transparent-stroke-plugin"
       ]
     },
     "2026-08-30": {
@@ -700,14 +722,6 @@ const heatmapData = {
       "tools": [
         "MangaReader_Project",
         "Train UI"
-      ]
-    },
-    "2026-07-22": {
-      "count": 35,
-      "tools": [
-        "MangaReader_Project",
-        "Train UI",
-        "transparent-stroke-plugin"
       ]
     },
     "2026-08-04": {
@@ -1984,6 +1998,19 @@ const heatmapData = {
         "MangaReader_Project"
       ]
     },
+    "2026-11-24": {
+      "count": 1,
+      "tools": [
+        "mnc-design-leads"
+      ]
+    },
+    "2026-11-22": {
+      "count": 33,
+      "tools": [
+        "mobile-visual-review",
+        "pulse_neet_app"
+      ]
+    },
     "2026-11-01": {
       "count": 41,
       "tools": [
@@ -1991,11 +2018,10 @@ const heatmapData = {
       ]
     },
     "2026-11-07": {
-      "count": 58,
+      "count": 13,
       "tools": [
         "JMA_Remedies",
-        "neet-exam-platform",
-        "plugins"
+        "neet-exam-platform"
       ]
     },
     "2026-11-11": {
@@ -2102,10 +2128,11 @@ const heatmapData = {
       ]
     },
     "2026-11-12": {
-      "count": 9,
+      "count": 58,
       "tools": [
         "android_app",
         "builds",
+        "pulse_neet_app",
         "scripts",
         "tools-lab-framer"
       ]
@@ -2204,19 +2231,30 @@ const heatmapData = {
         "docs"
       ]
     },
+    "2026-11-20": {
+      "count": 455,
+      "tools": [
+        "JMA_Remedies",
+        "curriculum_tracker",
+        "docs",
+        "plugins",
+        "pulse_neet_app"
+      ]
+    },
+    "2026-11-21": {
+      "count": 15,
+      "tools": [
+        "mock_tests",
+        "pulse_neet_app"
+      ]
+    },
     "2026-11-05": {
-      "count": 2863,
+      "count": 2851,
       "tools": [
         ".agents",
         "JMA_Remedies",
         "plugins",
         "tools"
-      ]
-    },
-    "2026-11-19": {
-      "count": 17,
-      "tools": [
-        "JMA_Remedies"
       ]
     },
     "2026-11-18": {
@@ -2225,8 +2263,14 @@ const heatmapData = {
         "JMA_Remedies"
       ]
     },
+    "2026-11-19": {
+      "count": 14,
+      "tools": [
+        "JMA_Remedies"
+      ]
+    },
     "2026-11-06": {
-      "count": 451,
+      "count": 450,
       "tools": [
         "JMA_Remedies",
         "plugins",
@@ -2266,8 +2310,8 @@ const heatmapData = {
       ]
     }
   },
-  "totalLastYear": 40698,
-  "totalTools": 111,
-  "productionRate": 9.2,
-  "lastUpdated": "2026-11-19T22:59:10.148070"
+  "totalLastYear": 41357,
+  "totalTools": 117,
+  "productionRate": 9.8,
+  "lastUpdated": "2026-11-24T22:22:35.015076"
 };
