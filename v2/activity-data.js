@@ -279,19 +279,19 @@ const heatmapData = {
         "farmer-voice-agent"
       ]
     },
+    "2026-10-12": {
+      "count": 75,
+      "tools": [
+        "FieldTimeTrackerAndroid",
+        "field-time-tracker"
+      ]
+    },
     "2026-09-17": {
       "count": 230,
       "tools": [
         "Snap",
         "Train UI",
         "design-systems",
-        "field-time-tracker"
-      ]
-    },
-    "2026-10-12": {
-      "count": 75,
-      "tools": [
-        "FieldTimeTrackerAndroid",
         "field-time-tracker"
       ]
     },
@@ -530,6 +530,12 @@ const heatmapData = {
         "figma_text_style_generator"
       ]
     },
+    "2026-05-23": {
+      "count": 27,
+      "tools": [
+        "financial-strategy-engine"
+      ]
+    },
     "2026-05-21": {
       "count": 133,
       "tools": [
@@ -537,10 +543,17 @@ const heatmapData = {
         "html-to-figma"
       ]
     },
-    "2026-05-23": {
-      "count": 27,
+    "2026-11-26": {
+      "count": 151,
       "tools": [
-        "financial-strategy-engine"
+        "JMA_Remedies",
+        "framer-ascii-bg"
+      ]
+    },
+    "2026-11-27": {
+      "count": 8,
+      "tools": [
+        "framer-ascii-bg"
       ]
     },
     "2026-05-28": {
@@ -690,13 +703,6 @@ const heatmapData = {
         "livekit-vercel-api"
       ]
     },
-    "2026-07-21": {
-      "count": 447,
-      "tools": [
-        "MangaReader_Project",
-        "Train UI"
-      ]
-    },
     "2026-07-09": {
       "count": 249,
       "tools": [
@@ -709,12 +715,11 @@ const heatmapData = {
         "pdf-teleprompter"
       ]
     },
-    "2026-07-22": {
-      "count": 35,
+    "2026-07-21": {
+      "count": 447,
       "tools": [
         "MangaReader_Project",
-        "Train UI",
-        "transparent-stroke-plugin"
+        "Train UI"
       ]
     },
     "2026-08-30": {
@@ -722,6 +727,14 @@ const heatmapData = {
       "tools": [
         "MangaReader_Project",
         "Train UI"
+      ]
+    },
+    "2026-07-22": {
+      "count": 35,
+      "tools": [
+        "MangaReader_Project",
+        "Train UI",
+        "transparent-stroke-plugin"
       ]
     },
     "2026-08-04": {
@@ -2232,7 +2245,7 @@ const heatmapData = {
       ]
     },
     "2026-11-20": {
-      "count": 455,
+      "count": 452,
       "tools": [
         "JMA_Remedies",
         "curriculum_tracker",
@@ -2270,7 +2283,7 @@ const heatmapData = {
       ]
     },
     "2026-11-06": {
-      "count": 450,
+      "count": 476,
       "tools": [
         "JMA_Remedies",
         "plugins",
@@ -2282,6 +2295,12 @@ const heatmapData = {
       "tools": [
         "JMA_Remedies",
         "remote_blender_pipeline_v2"
+      ]
+    },
+    "2026-11-25": {
+      "count": 319,
+      "tools": [
+        "JMA_Remedies"
       ]
     },
     "2026-11-04": {
@@ -2310,8 +2329,8 @@ const heatmapData = {
       ]
     }
   },
-  "totalLastYear": 41357,
-  "totalTools": 117,
+  "totalLastYear": 41858,
+  "totalTools": 118,
   "productionRate": 9.8,
-  "lastUpdated": "2026-11-24T22:22:35.015076"
+  "lastUpdated": "2026-11-27T04:07:53.641714"
 };
